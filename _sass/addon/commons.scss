@@ -721,6 +721,7 @@ $btn-mb: 0.5rem;
     overflow: hidden;
     box-shadow: var(--avatar-border-color) 0 0 0 2px;
     transform: translateZ(0); /* fixed the zoom in Safari */
+    margin: auto; // 이미지 중앙 정렬
 
     img {
       transition: transform 0.5s;
@@ -735,7 +736,7 @@ $btn-mb: 0.5rem;
     @include mt-mb(2.5rem);
     @extend %clickable-transition;
 
-    padding-left: 2.5rem;
+    padding-left: 1.25rem;
     padding-right: 1.25rem;
     width: 100%;
   }
@@ -748,6 +749,7 @@ $btn-mb: 0.5rem;
     letter-spacing: 0.25px;
     margin-top: 1.25rem;
     margin-bottom: 0.5rem;
+    text-align: center; // 텍스트 중앙 정렬
 
     a {
       @extend %clickable-transition;
@@ -766,6 +768,7 @@ $btn-mb: 0.5rem;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    text-align: center; // 텍스트 중앙 정렬
   }
 
   ul {
