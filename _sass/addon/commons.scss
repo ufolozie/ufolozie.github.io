@@ -822,8 +822,8 @@ $btn-mb: 0.5rem;
   }
 
   .sidebar-bottom {
-    padding-left: 2rem;
-    padding-right: 1rem;
+    padding-left: 3.5rem;
+    padding-right: 0rem;
     margin-bottom: 1.5rem;
 
     $btn-size: 1.75rem;
@@ -852,7 +852,7 @@ $btn-mb: 0.5rem;
       @extend %clickable-transition;
 
       &:not(:last-child) {
-        margin-right: $sb-btn-gap;
+        margin-right: 0.6rem;
       }
     }
 
