@@ -7,6 +7,8 @@ tags: [java]
 
 > for / while / do while 의 세 가지 반복문을 사용하여 1부터 100까지의 숫자 중 홀수의 합을 구하는 프로그램
 
+<br>
+
 ```java
 public class LoopTest {
     public static void main(String[] args) { // main 함수 호출
