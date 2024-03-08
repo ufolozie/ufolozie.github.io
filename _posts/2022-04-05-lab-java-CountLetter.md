@@ -1,7 +1,7 @@
 ---
 title: 문자 발생 횟수 계산 예제 (CountLetter)
 date: 2022-04-11 00:00:00 +0900
-categories: [Java, Lab]
+categories: [Lab, Java]
 tags: [java]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 루프 변환 예제 (LoopTest)
 date: 2022-03-30 00:00:00 +0900
-categories: [Java, Lab]
+categories: [Lab, Java]
 tags: [java]
 ---
 
