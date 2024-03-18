@@ -1,5 +1,5 @@
 ---
-title: 문자 발생 횟수 계산 예제 (CountLetter)
+title: "[Java/자바] 문자 발생 횟수 계산 예제 (CountLetter)"
 date: 2022-04-11 00:00:00 +0900
 categories: [Lab, Java]
 tags: [java]
@@ -19,25 +19,25 @@ tags: [java]
 
 <br>
 
-📌 Conditions
+📌 Condition
 
 - 배열 count의 요소의 값이 0인 알파벳은 출력에서 제외
 
-- 대문자를 포함하여 문자 횟수를 출력 (여기서 두 가지 해석의 여지가 생긴다)
+- 대문자를 포함하여 문자 횟수를 출력 (2가지 방법)
   
   ① 대→소문자 변환하여 출력
   
   ② 대/소문자 구분하여 출력
-  
-  <br>
-  
-  ①의 경우, `.toLowerCase()` 메소드를 사용하고,
-  
-  ②의 경우, 대/소문자 두 가지 배열을 선언해야 한다. 앞서 선언한 배열 count는 정수 26개만을 담을 수 있게 설계되었고, 이는 알파벳 소문자(혹은 대문자)의 개수와 일치하기 때문.
-  
-  <br>
-  
-  아래 코드에서는 대문자를 소문자로 변환하여 배열 count에 포함된 문자 횟수만을 출력하였다. 
+
+<br>
+
+①의 경우, .toLowerCase() 메소드를 사용하고,
+
+②의 경우, 대/소문자 두 가지 배열을 선언해야 한다. 앞서 선언한 배열 count는 정수 26개만을 담을 수 있게 설계되었고, 이는 알파벳 소문자(혹은 대문자)의 개수와 일치하기 때문.
+
+<br>
+
+아래 코드에서는 대문자를 소문자로 변환하여 배열 count에 포함된 문자 횟수만을 출력하였다.
 
 <br>
 
@@ -100,19 +100,18 @@ for (int i = 0; i < buffer.length(); i++) {
 
 ### 예외처리 해야 할 부분
 
-    *try { 각 문자가 등장하는 횟수 계산 }*
+*try { 각 문자가 등장하는 횟수 계산 }*
 
-    *catch { 대문자→소문자 변환 }*
+*catch { 대문자→소문자 변환 }*
 
-    *finally { 각 문자가 등장하는 횟수 계산 }*
+*finally { 각 문자가 등장하는 횟수 계산 }*
 
 <br>
 
-문자열 buffer에서 각 문자가 등장하는 횟수를 계산하는 for문 내부에 `try-catch`문을 중첩하여 **대문자 예외처리를 위한 코드를 추가**하였다.
+문자열 buffer에서 각 문자가 등장하는 횟수를 계산하는 for문 내부에 try-catch문을 중첩하여 **대문자 예외처리를 위한 코드를 추가**하였다.
 
-    `try { // char ch = buffer.charAt(i); count[ch - 'a']++; }`
-
-    `catch { // (대문자 입력 시) buffer = buffer.toLowerCase(); … }`
+`try { // char ch = buffer.charAt(i); count[ch - 'a']++; }`  
+`catch { // (대문자 입력 시) buffer = buffer.toLowerCase(); … }`
 
 ▶
 
@@ -145,7 +144,7 @@ for (int i = 0; i < buffer.length(); i++) {
 
 - 사용자로부터 문자열을 받아 String buffer에 저장한 뒤, buffer 내 공백을 제거한다.
 
-- 대문자가 입력으로 들어왔을 경우의 예외처리를 위해 for문 내부에 `try-catch`문을 삽입한다.
+- 대문자가 입력으로 들어왔을 경우의 예외처리를 위해 for문 내부에 try-catch문을 삽입한다.
 
 - count 값이 0이 아닌 요소들을 출력한다.
 
@@ -250,7 +249,7 @@ public class CountLetters {
 
 ---
 
-## ver4            // 제출 코드
+## ver4            // 최종 코드 (피드백 전)
 
 ```java
 /*
@@ -309,9 +308,9 @@ public class CountLetter {
 
 - `buffer.replaceAll(" ", "");`와 같은 라이브러리를 사용하지 않고 코딩으로 해결할 것. 어차피 'a'보다 크다면 공백문자가 될 수 없음. (공백문자는 'a'보다 작은 값)
 
-- 대/소문자 배열 길이를 알고 있으므로 ArrayIndexOutOfBoundsException을 할 필요는 없는 듯 함. 다만, 입력 시 받은 배열의 문자가 알파벳이 아닐 경우 이러한 예외처리 가능.
+- 대/소문자 배열 길이를 알고 있으므로 ArrayIndexOutOfBoundsException을 할 필요는 없음. 다만, 입력 시 받은 배열의 문자가 알파벳이 아닐 경우 이러한 예외처리 가능.
 
-- 문자로 캐스팅해서 이를 출력하기보다는 `printf`문을 사용하여 %c로 바로 변환하는 것을 권장함.
+- 문자로 캐스팅해서 이를 출력하기보다는 printf문을 사용하여 %c로 바로 변환하는 것을 추천함.
 
 <br>
 
