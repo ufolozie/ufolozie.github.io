@@ -3,6 +3,7 @@ title: "IP 주소 정리"
 date: 2023-11-19 14:01:40 +0900
 categories: [Study, Data Communication Network]
 tags: [network]
+math: true
 ---
 
 ### **개요**

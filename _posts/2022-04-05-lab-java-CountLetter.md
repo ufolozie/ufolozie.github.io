@@ -319,11 +319,6 @@ public class CountLetter {
 ## ver5            // 최종 코드 (피드백 후)
 
 ```java
-/*
-작성자: ufolozie
-작성일: 2022-04-08
-프로그램 설명: 문자가 발생하 횟수를 계산하는 프로그램
-*/
 import java.util.Scanner; // Scanner 클래스 포함
 
 public class CountLetters {
