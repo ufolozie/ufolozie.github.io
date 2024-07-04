@@ -1,5 +1,5 @@
 ---
-title: "[JavaScript/자바스크립트] prompt() 함수 활용 예제"
+title: "[JS/자바스크립트] prompt() 함수 활용 예제"
 date: 2022-06-09 17:40:05 +0900
 categories: [Lab, JavaScript]
 tags: [javascript]
