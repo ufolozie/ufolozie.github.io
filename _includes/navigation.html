@@ -179,7 +179,7 @@
   </ul>
 </nav>
 
-{% if site.tag_nav_enabled %}
+<!-- {% if site.tag_nav_enabled %}
   <ul class="header-tags {% if site.scrollappear_enabled %}scrollappear{% endif %}">
     {% assign tags = site.tags | sort %}
     {% for tag in tags %}
@@ -189,6 +189,23 @@
         {% break %}
       {% endif %}
         <li><a href="{{ 'tag/' | relative_url }}{{ tag[0] }}">{{ tag[0] | capitalize }}</a></li>
+    {% endfor %}
+  </ul>
+{% endif %} -->
+<!-- About me 페이지에서만 태그 네비게이션(tag_nav_enabled)이 뜨지 않도록 수정 -->
+{% if site.tag_nav_enabled and page.url != "/about" %}
+  <ul class="header-tags {% if site.scrollappear_enabled %}scrollappear{% endif %}">
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+      {% if forloop.index > 10 %}
+        <li>...</li>
+        <li><a href="/tags">Show all</a></li>
+        {% break %}
+      {% endif %}
+      {% if forloop.index <= 10 %}
+        <!-- <li><a href="{{ 'tag/' | relative_url }}{{ tag[0] }}">{{ tag[0] | capitalize }}</a></li> -->
+        <li><a href="{{ 'tag/' | relative_url }}{{ tag[0] }}">{{ tag[0] }}</a></li>
+      {% endif %}
     {% endfor %}
   </ul>
 {% endif %}

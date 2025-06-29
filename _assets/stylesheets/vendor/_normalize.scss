@@ -89,9 +89,13 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
+// pre {
+//   font-family: monospace, monospace; /* 1 */
+//   font-size: 1em; /* 2 */
+// }
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: 'Menlo', 'Nanum Gothic Coding', monospace;
+  font-size: 1em;
 }
 
 /* Text-level semantics
@@ -151,11 +155,17 @@ strong {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
+// code,
+// kbd,
+// samp {
+//   font-family: monospace, monospace; /* 1 */
+//   font-size: 1em; /* 2 */
+// }
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: 'Menlo', 'Nanum Gothic Coding', monospace;
+  font-size: 1em;
 }
 
 /**

@@ -1,7 +1,17 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>{{ site.name }} | {{ page.title }}</title>
+  <!-- <title>{{ site.name }} | {{ page.title }}</title> -->
+  <!-- 브라우저 탭 표시: 메인 페이지 외에는 '페이지 타이틀 | 사이트명'으로 쓰도록 설정 -->
+  <title>
+    {% if page.url == "/" %}
+      {{ site.name }}
+    {% elsif page.title %}
+      {{ page.title }} | {{ site.name }}
+    {% else %}
+      {{ site.name }}
+    {% endif %}
+  </title>
   <meta name="description" content="{{ page.description }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -31,6 +41,9 @@
 
   <link href="{{ 'feed.xml' | absolute_url }}" type="application/rss+xml" rel="alternate" title="{{ site.name }} Last 10 blog posts" />
 
+  <!-- Google Fonts: Lato + Asta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Asta+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
   {% if site.local_fonts %}
     {% asset fonts.css %}
   {% endif %}
