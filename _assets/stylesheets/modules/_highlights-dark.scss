@@ -15,6 +15,8 @@
   pre {
     margin: 0;
   }
+  white-space: pre-wrap; // 줄바꿈 허용 추가
+  word-break: break-word; // 긴 단어 줄바꿈 추가
 }
 
 // Inline highlighting
@@ -27,6 +29,7 @@
   background: darken($gray-darkest, 5);
   border: 1px solid $base-border-color;
   border-radius: 1px;
+  margin-bottom: 20px; // 마진 추가 (h*: 10px, p: 30px)
 }
 
 // Responsive

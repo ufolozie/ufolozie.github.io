@@ -86,3 +86,8 @@ plugins:
   - jemoji
 paginate_path: /posts/page/:num/
 permalink: posts/:slug
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false

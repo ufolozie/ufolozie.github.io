@@ -19,6 +19,7 @@ body {
   margin: 0 auto;
   font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; // 추가
   font-weight: $base-font-weight;
   line-height: $base-line-height;
   color: $base-font-color;
@@ -141,6 +142,7 @@ hr {
   border-right: 0;
   border-bottom: 1px solid $base-border-color;
   border-left: 0;
+  margin-bottom: 30px;
 }
 
 img {
@@ -158,4 +160,11 @@ img {
 ::selection {
   color: $white;
   background-color: $gray-darkest;
+}
+
+.katex-display {
+  font-size: 0.88em;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
