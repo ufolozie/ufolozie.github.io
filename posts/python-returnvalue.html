@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <!-- <title>ufolozie | </title> -->
+  <!-- <title>ufolozie | [Python] 반환값으로의 튜플</title> -->
   <!-- 브라우저 탭 표시: 메인 페이지 외에는 '페이지 타이틀 | 사이트명'으로 쓰도록 설정 -->
   <title>
     
-      ufolozie
+      [Python] 반환값으로의 튜플 | ufolozie
     
   </title>
-  <meta name="description" content="">
+  <meta name="description" content="함수에서 값 한 개 이상 반환하기">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="">
+  <meta property="og:title" content="[Python] 반환값으로의 튜플">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ufolozie.github.io/">
-  <meta property="og:description" content="">
+  <meta property="og:url" content="https://ufolozie.github.io/posts/python-returnvalue">
+  <meta property="og:description" content="함수에서 값 한 개 이상 반환하기">
   <meta property="og:site_name" content="ufolozie">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="https://ufolozie.github.io/">
-  <meta name="twitter:title" content="">
-  <meta name="twitter:description" content="">
+  <meta name="twitter:url" content="https://ufolozie.github.io/posts/python-returnvalue">
+  <meta name="twitter:title" content="[Python] 반환값으로의 튜플">
+  <meta name="twitter:description" content="함수에서 값 한 개 이상 반환하기">
 
   
     <meta property="og:image" content="https://ufolozie.github.io/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
@@ -208,26 +208,13 @@
     
   </ul>
 
-        <ul class="article-list">
-  
-    <li class="article-list-item scrollappear">
-      <a href="/posts/network-1" title="통신망과 특징">
-        <h5>
-          통신망과 특징
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon-arrow-right">
-  <use href="/assets/arrow-right-05feb9da52810d15348895a9a885c61803f4d2ae681b4fc442b285fef184dd2b.svg#icon-arrow-right" xlink:href="/assets/arrow-right-05feb9da52810d15348895a9a885c61803f4d2ae681b4fc442b285fef184dd2b.svg#icon-arrow-right"></use>
-</svg>
-
-        </h5>
-      </a>
-      <p>
-        
-          유선통신망 / 무선통신망  
-        
-      </p>
-      <div class="article-list-footer">
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>[Python] 반환값으로의 튜플</h1>
+            <p>함수에서 값 한 개 이상 반환하기</p>
+            <div class="article-list-footer">
   <span class="article-list-date">
-    September 30, 2023
+    April 17, 2021
   </span>
   <span class="article-list-divider">-</span>
   <span class="article-list-minutes">
@@ -240,181 +227,90 @@
   <div class="article-list-tags">
     
       
-      <a href="/tag/네트워크" title="See all posts with tag '네트워크'">네트워크</a>
+      <a href="/tag/Python" title="See all posts with tag 'Python'">Python</a>
     
   </div>
 </div>
-    </li>
-  
-    <li class="article-list-item scrollappear">
-      <a href="/posts/ip-7" title="영상의 특징값 추출 방법">
-        <h5>
-          영상의 특징값 추출 방법
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon-arrow-right">
-  <use href="/assets/arrow-right-05feb9da52810d15348895a9a885c61803f4d2ae681b4fc442b285fef184dd2b.svg#icon-arrow-right" xlink:href="/assets/arrow-right-05feb9da52810d15348895a9a885c61803f4d2ae681b4fc442b285fef184dd2b.svg#icon-arrow-right"></use>
-</svg>
+          </header>
 
-        </h5>
-      </a>
-      <p>
-        
-          마스크 기반 엣지 검출 / 캐니 엣지 검출기 / 허프 변환을 이용한 직선 검출 / 해리스 코너 포인트 검출  
-        
-      </p>
-      <div class="article-list-footer">
-  <span class="article-list-date">
-    June 6, 2023
-  </span>
-  <span class="article-list-divider">-</span>
-  <span class="article-list-minutes">
-    
-    
-      29 minute read
-    
-  </span>
-  <span class="article-list-divider">-</span>
-  <div class="article-list-tags">
-    
-      
-      <a href="/tag/AI" title="See all posts with tag 'AI'">AI</a>
-    
-      
-      <a href="/tag/영상처리" title="See all posts with tag '영상처리'">영상처리</a>
-    
-  </div>
-</div>
-    </li>
-  
-    <li class="article-list-item scrollappear">
-      <a href="/posts/ip-6" title="영상의 기하학적 변환">
-        <h5>
-          영상의 기하학적 변환
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon-arrow-right">
-  <use href="/assets/arrow-right-05feb9da52810d15348895a9a885c61803f4d2ae681b4fc442b285fef184dd2b.svg#icon-arrow-right" xlink:href="/assets/arrow-right-05feb9da52810d15348895a9a885c61803f4d2ae681b4fc442b285fef184dd2b.svg#icon-arrow-right"></use>
-</svg>
+          <div class="article-content">
+            <p>파이썬 함수에서는 결괏값 여러 개를 쉼표로 구분하여 반환할 수 있다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span>
+</code></pre></div></div>
 
-        </h5>
-      </a>
-      <p>
-        
-          이동 / 크기 / 회전 / 대칭 변환  
-        
-      </p>
-      <div class="article-list-footer">
-  <span class="article-list-date">
-    May 22, 2023
-  </span>
-  <span class="article-list-divider">-</span>
-  <span class="article-list-minutes">
-    
-    
-      19 minute read
-    
-  </span>
-  <span class="article-list-divider">-</span>
-  <div class="article-list-tags">
-    
-      
-      <a href="/tag/AI" title="See all posts with tag 'AI'">AI</a>
-    
-      
-      <a href="/tag/영상처리" title="See all posts with tag '영상처리'">영상처리</a>
-    
-  </div>
-</div>
-    </li>
-  
-    <li class="article-list-item scrollappear">
-      <a href="/posts/ip-5" title="다양한 공간적 필터링 기법">
-        <h5>
-          다양한 공간적 필터링 기법
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon-arrow-right">
-  <use href="/assets/arrow-right-05feb9da52810d15348895a9a885c61803f4d2ae681b4fc442b285fef184dd2b.svg#icon-arrow-right" xlink:href="/assets/arrow-right-05feb9da52810d15348895a9a885c61803f4d2ae681b4fc442b285fef184dd2b.svg#icon-arrow-right"></use>
-</svg>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 
-        </h5>
-      </a>
-      <p>
-        
-          평균 값 필터 / 가중 평균 값 필터 / 가우시안 필터 / 언샤프 마스크 필터링 / 하이부스트 필터 / 가우시안 잡음 / 소금 & 후추 잡음 / 미디언 필터 / 비등방성 확산 필터  
-        
-      </p>
-      <div class="article-list-footer">
-  <span class="article-list-date">
-    May 16, 2023
-  </span>
-  <span class="article-list-divider">-</span>
-  <span class="article-list-minutes">
-    
-    
-      22 minute read
-    
-  </span>
-  <span class="article-list-divider">-</span>
-  <div class="article-list-tags">
-    
-      
-      <a href="/tag/AI" title="See all posts with tag 'AI'">AI</a>
-    
-      
-      <a href="/tag/영상처리" title="See all posts with tag '영상처리'">영상처리</a>
-    
-  </div>
-</div>
-    </li>
-  
-    <li class="article-list-item scrollappear">
-      <a href="/posts/ip-4" title="화질 향상 기법">
-        <h5>
-          화질 향상 기법
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon-arrow-right">
-  <use href="/assets/arrow-right-05feb9da52810d15348895a9a885c61803f4d2ae681b4fc442b285fef184dd2b.svg#icon-arrow-right" xlink:href="/assets/arrow-right-05feb9da52810d15348895a9a885c61803f4d2ae681b4fc442b285fef184dd2b.svg#icon-arrow-right"></use>
-</svg>
 
-        </h5>
-      </a>
-      <p>
-        
-          반전 / 밝기 조절 / 명암비 조절 / 감마 보정 / 히스토그램 분석 / 히스토그램 스트레칭 / 히스토그램 균등화  
-        
-      </p>
-      <div class="article-list-footer">
-  <span class="article-list-date">
-    April 25, 2023
-  </span>
-  <span class="article-list-divider">-</span>
-  <span class="article-list-minutes">
-    
-    
-      13 minute read
-    
-  </span>
-  <span class="article-list-divider">-</span>
-  <div class="article-list-tags">
-    
-      
-      <a href="/tag/AI" title="See all posts with tag 'AI'">AI</a>
-    
-      
-      <a href="/tag/영상처리" title="See all posts with tag '영상처리'">영상처리</a>
-    
-  </div>
-</div>
-    </li>
-  
-  
-    <li class="article-pagination ">
-      
-        <a href="/posts/page/2/" class="article-pagination-left"><svg xmlns="http://www.w3.org/2000/svg" class="icon-arrow-left">
-  <use href="/assets/arrow-left-3fbaf3633c5b37e961028aa1ab5a308806edebadcfc1f9f0b30bcf35c3a4fb8c.svg#icon-arrow-left" xlink:href="/assets/arrow-left-3fbaf3633c5b37e961028aa1ab5a308806edebadcfc1f9f0b30bcf35c3a4fb8c.svg#icon-arrow-left"></use>
-</svg>
- Older posts</a>
-      
-      
-    </li>
-  
-</ul>
+<span class="p">[</span><span class="n">실행</span> <span class="n">결과</span><span class="p">]</span>
+<span class="bp">True</span>
+<span class="bp">False</span>
+</code></pre></div></div>
 
+<p>이는 사실상 결괏값을 튜플로 반환하는 방법이다. 위 예제에서는 반환된 튜플이 (True, False)로 되는 셈이다.</p>
+
+<p>이때 결괏값을 튜플로 반환한다는 것은 어떤 의미인가?</p>
+
+<p><br /></p>
+
+<p><strong>엄밀하게 말해서 함수는 값 하나만 반환할 수 있지만, 값이 튜플이면 값을 여러 개 반환한 것과 같다</strong>. 예를 들어 두 정수를 나눈 후에 몫과 나머지를 계산하고 싶다면 x / y를 계산하고 x % y를 계산하는 것으로는 부족하다. 이를 계산하는 더 나은 방법은 둘을 동시에 계산하는 것이다.</p>
+
+<p>내장 함수 divmod는 인수 두 개를 받아서 값이 두 개(몫과 나머지)인 튜플을 반환한다. 즉, 결과를 튜플로 저장할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">t</span>
+
+
+<span class="p">[</span><span class="n">실행</span> <span class="n">결과</span><span class="p">]</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>아니면 튜플 할당문을 사용해 원소들을 따로따로 저장할 수도 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">quot</span><span class="p">,</span> <span class="n">rem</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">quot</span>
+<span class="n">rem</span>
+
+
+<span class="p">[</span><span class="n">실행</span> <span class="n">결과</span><span class="p">]</span>
+<span class="mi">2</span>
+<span class="mi">1</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>처음 예제로 다시 돌아가보면, 이렇게 다시 쓸 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+    <span class="k">return</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+
+<span class="p">[</span><span class="n">실행</span> <span class="n">결과</span><span class="p">]</span>
+<span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span> <span class="c1"># 튜플로 반환
+</span></code></pre></div></div>
+
+<p><br /></p>
+
+          </div>
+          <!-- <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=[Python]+%EB%B0%98%ED%99%98%EA%B0%92%EC%9C%BC%EB%A1%9C%EC%9D%98+%ED%8A%9C%ED%94%8C%20-%20https://ufolozie.github.io/posts/python-returnvalue" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://ufolozie.github.io/posts/python-returnvalue" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div> -->
+
+          
+        </article>
         <footer class="footer scrollappear">
   <p>
     <!-- Chalk is a high quality, completely customizable, performant and 100% free

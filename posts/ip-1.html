@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- <title>ufolozie | 영상 처리 개요</title> -->
+  <!-- 브라우저 탭 표시: 메인 페이지 외에는 '페이지 타이틀 | 사이트명'으로 쓰도록 설정 -->
+  <title>
+    
+      영상 처리 개요 | ufolozie
+    
+  </title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="영상 처리 개요">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ufolozie.github.io/posts/ip-1">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="ufolozie">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://ufolozie.github.io/posts/ip-1">
+  <meta name="twitter:title" content="영상 처리 개요">
+  <meta name="twitter:description" content="">
+
+  
+    <meta property="og:image" content="https://ufolozie.github.io/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://ufolozie.github.io/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://ufolozie.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="ufolozie Last 10 blog posts" />
+
+  <!-- Google Fonts: Lato + Asta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-beedd90315537e310b254bec4805e074d2f5e41fd7907ae045f21200909e1cd0.css">
+    
+
+  
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <!-- KaTeX JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="ufolozie">ufolozie</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-about">
+  <use href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about" xlink:href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+      <li>
+        <a href="https://github.com/ufolozie" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="mailto:dbryu6@gmail.com" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
+  <use href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email" xlink:href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+<!-- 
+  <ul class="header-tags scrollappear">
+    
+    
+      
+        <li><a href="/tag/AI">Ai</a></li>
+    
+      
+        <li><a href="/tag/CS">Cs</a></li>
+    
+      
+        <li><a href="/tag/Java">Java</a></li>
+    
+      
+        <li><a href="/tag/JavaScript">Javascript</a></li>
+    
+      
+        <li><a href="/tag/Python">Python</a></li>
+    
+      
+        <li><a href="/tag/네트워크">네트워크</a></li>
+    
+      
+        <li><a href="/tag/영상처리">영상처리</a></li>
+    
+  </ul>
+ -->
+<!-- About me 페이지에서만 태그 네비게이션(tag_nav_enabled)이 뜨지 않도록 수정 -->
+
+  <ul class="header-tags scrollappear">
+    
+    
+      
+      
+        <!-- <li><a href="/tag/AI">Ai</a></li> -->
+        <li><a href="/tag/AI">AI</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/CS">Cs</a></li> -->
+        <li><a href="/tag/CS">CS</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/Java">Java</a></li> -->
+        <li><a href="/tag/Java">Java</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/JavaScript">Javascript</a></li> -->
+        <li><a href="/tag/JavaScript">JavaScript</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/Python">Python</a></li> -->
+        <li><a href="/tag/Python">Python</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/네트워크">네트워크</a></li> -->
+        <li><a href="/tag/네트워크">네트워크</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/영상처리">영상처리</a></li> -->
+        <li><a href="/tag/영상처리">영상처리</a></li>
+      
+    
+  </ul>
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>영상 처리 개요</h1>
+            <p></p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    April 8, 2023
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      10 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/AI" title="See all posts with tag 'AI'">AI</a>
+    
+      
+      <a href="/tag/영상처리" title="See all posts with tag '영상처리'">영상처리</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <p><strong>영상 처리</strong>는 영상을 대상으로 하는 신호 처리의 한 분야로써 <strong>영상으로부터 원하는 정보를 얻기 위해 행하는 모든 종류의 처리</strong>를 의미한다.</p>
+
+<p>일반적으로 영상은 2차원 배열의 형태로 표현되기 때문에 2차원 평면 공간에서 다양한 신호 처리 기법을 이용하여 원하는 결과를 도출한다.</p>
+
+<p><br /></p>
+
+<h2 id="영상-처리의-역사"><strong>영상 처리의 역사</strong></h2>
+
+<p>1960년대 미국에서 위성으로부터 전송 받은 달 표면 사진의 화질을 복원시키는 방법에 대한 연구가 디지털 영상 처리의 시초로 알려져 있다. 1970년대에는 의료 영상 처리, 위성 사진 처리 등의 분야로 영상 처리 영역이 확대되었고, 현재는 문자 인식, 얼굴 인식, 군사 감시 시설, 공장 자동화, 자율 주행 자동차 등 폭넓은 분야에서 영상 처리가 사용되고 있다.</p>
+
+<p><br /></p>
+
+<h2 id="영상-처리의-분야"><strong>영상 처리의 분야</strong></h2>
+
+<ul>
+  <li><strong>영상의 화질 향상</strong>: 전체적으로 어두운 영상을 밝게 만들거나 흐린 영상을 선명하게 만드는 등 영상을 보기 좋은 상태로 변환하는 작업</li>
+  <li><strong>영상의 기하학적 변환</strong>: 영상의 이동 변환, 크기 변환, 회전 변환 등을 이용하여 영상의 전체적인 형태를 변형하는 것</li>
+  <li><strong>영상 분할</strong>: 영상을 객체와 배경으로 분리하거나 또는 영상을 의미 있는 영역으로 구분하는 작업</li>
+  <li><strong>객체의 모양 기술</strong>: 영상 분할된 각 영역에 대해 모양을 기술</li>
+  <li><strong>객체 인식</strong>: 영상 분할된 각 영역에 대해 색상과 엣지 등의 정보를 이용하여 무엇인지를 인식하는 작업</li>
+  <li><strong>영상 압축</strong>: JPEG, MPEG와 같이 영상을 적은 수의 데이터로 표현하기 위한 방법</li>
+  <li><strong>동영상 처리</strong>: 일련의 영상으로부터 움직임 정보를 추출한다거나 원하는 제스처를 인식하는 등의 처리</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="영상-처리-응용-분야"><strong>영상 처리 응용 분야</strong></h2>
+
+<ul>
+  <li>얼굴 검출 (face detection)
+    <ul>
+      <li>영상에 있는 얼굴의 위치와 크기를 찾는 것</li>
+      <li>대부분의 디지털 카메라에서 얼굴을 찾아 자동으로 초점을 맞추는 기능이 탑재되어 있음</li>
+    </ul>
+  </li>
+  <li>얼굴 인식 (face recognition)
+    <ul>
+      <li>검출된 얼굴이 누구인지를 판단하는 기술</li>
+      <li>사람의 다양한 표정에 따른 미세한 변화로 인해 얼굴 검출보다 훨씬 어려움</li>
+      <li>최근에는 다양한 조명 변화, 안경 착용, 헤어 스타일의 변화 등의 조건에서도 얼굴을 찾고 인식하는 방법에 대한 연구 진행 중</li>
+    </ul>
+  </li>
+  <li>내용 기반 영상 검색 (CBIR, Content-Based Image Retrieval)
+    <ul>
+      <li>영상에 존재하는 사람, 사물, 색상 정보 등을 인식하여 원하는 영상을 자동으로 찾아주는 시스템</li>
+    </ul>
+  </li>
+  <li>컬러 영상의 화질 개선
+    <ul>
+      <li>디지털 카메라 내부적으로 얻은 10~16비트 RAW 영상을 8비트 JPG 영상으로 변환하면서 화질을 최상으로 유지하기 위한 알고리즘 사용</li>
+      <li>역광에서 사진을 촬영할 때 적정 노출보다 조금 어둡거나 조금 더 밝은 사진을 찍은 후 합성하여 전체적으로 세부 윤곽이 잘 드러나는 사진을 만드는 HDR(High Dynamic Range) 기법</li>
+    </ul>
+  </li>
+  <li>의료 영상 분야
+    <ul>
+      <li>X-ray 영상 또는 CT 영상</li>
+      <li>의료 영상은 매우 정밀한 분석이 요구되는 분야로 화질을 개선하는 형태의 영상 처리가 주로 사용됨</li>
+      <li>최근에는 의료 영상 자체를 자동으로 분석하는 형태의 연구 진행 중</li>
+    </ul>
+  </li>
+  <li>문서 처리
+    <ul>
+      <li>문서 인식 기법(OCR, Optical Character Recognition) 을 문서 영상 처리에 적용</li>
+      <li>문서 영상을 스캐너로 입력 받아 이를 자동으로 텍스트 형태로 바꾸어 저장하고 스마트폰 카메라로 영어 단어를 가리키면 원하는 다른 언어로 자동 번역하는 등의 기능</li>
+    </ul>
+  </li>
+  <li>공장 자동화 (FA, Factory Automation)
+    <ul>
+      <li>공장에서 생산되는 각종 부품의 결함 등을 실시간 처리를 통해 사람의 손을 거치지 않고 빠르고 정확하게 검출</li>
+      <li>불량 검출 성능과 속도가 매우 중요하므로 이를 위해 특수한 형태의 카메라를 사용하거나 잘 제어된 조명을 사용함</li>
+    </ul>
+  </li>
+  <li>인공지능 로봇과 자율 주행 자동차
+    <ul>
+      <li>입력 영상을 객체와 배경으로 분할하고, 각각의 특징을 추출하여 객체와 상황을 판단</li>
+      <li>영상 인식을 통한 인지 능력은 인공지능 로봇의 눈과 뇌의 역할을 담당함으로써 사람이 하는 일을 대체</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="영상-표현-방법"><strong>영상 표현 방법</strong></h2>
+
+<ul>
+  <li><strong>그레이스케일</strong>(grayscale) 영상
+    <ul>
+      <li>색상 정보 없이 오직 밝기 정보만으로 구성된 영상</li>
+      <li>흑백 사진처럼 검정색, 회색, 흰색으로 구성</li>
+    </ul>
+  </li>
+  <li><strong>트루컬러</strong>(true-color) 영상
+    <ul>
+      <li>컬러 사진처럼 색상 정보를 가지고 있어서 다양한 색상을 표현할 수 있는 영상</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<p>👾 <strong>픽셀</strong>(pixel, picture element) 또는 <strong>화소</strong>(畵素)는 <em>“영상의 기본 단위”</em>이다.<br />
+그레이스케일 영상에서 하나의 픽셀은 0부터 255 사이의 정숫값을 가질 수 있다. 이는 하나의 픽셀을 표현하기 위하여 컴퓨터에서 1바이트의 메모리 공간을 사용하기 때문이다. 컴퓨터에서 1바이트는 256가지의 수를 표현할 수 있다. 픽셀 값이 0이면 검정색을 나타내는 것이고, 255이면 흰색을 나타낸다. 그 중간의 값은 검정색과 흰색 사이의 회색을 나타낸다. 0부터 255 사이의 정숫값의 범위를 그레이스케일 범위라고 부른다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="2차원-배열-처리"><strong>2차원 배열 처리</strong></h2>
+
+<p>기본적으로 C/C++에서는 다차원 배열을 지원한다. 그러므로 2차원 공간에서 정의된 영상을 저장하기 위해서는 C/C++의 2차원 배열을 사용하는 것이 적합하다(이는 컴퓨터에서 영상을 처리하는 가장 일반적인 방법이다). 예컨대 가로(x) 크기가 640이고, 세로(y) 크기가 480인 그레이스케일 영상 데이터를 저장할 배열을 만들려면 <code class="highlighter-rouge">unsigned char a[480][680];</code> 과 같은 형태로 코드를 작성해야 한다.</p>
+
+<p>unsigned char 자료형은 1바이트(=8비트) 크기를 가지며, 256(=2⁸)가지 값을 표현할 수 있으므로 0부터 255까지의 정수 값을 사용할 수 있다. 따라서 픽셀이 가질 수 있는 값의 범위가 0부터 255인 그레이스케일 영상을 표현하기에 가장 적합하다.</p>
+
+<p>일반적인 C/C++ 배열은 처음 선언할 때 배열의 크기를 상수로 지정 생성해야만 하며, 이처럼 크기가 처음에 고정된 배열 생성 방식을 정적 배열 생성이라고 한다. 2차원 배열을 선언할 때 두 개의 괄호 중 첫 번째에 y축에 해당하는 크기를 입력하고 두 번째에 x축에 해당하는 크기를 입력한다. 2차원 배열을 선언하면 실제 메모리 공간에서는 2차원 배열 전체 크기만큼의 메모리 공간이 연속적으로 할당된다. 즉 640 * 480 = 307200이므로 앞의 배열 선언이나 <code class="highlighter-rouge">unsinged char a[307200];</code> 배열 선언이나 메모리는 동일한 크기로 연속적으로 할당된다. 다만 2차원 배열로 선언하면 각 배열 원소에 접근할 때 2차원 배열 방식을 따르게 된다.</p>
+
+<p><strong>그러나 실제 영상 처리 프로그래밍에서 일반적인 2차원 배열을 이용하여 영상을 표현하는 일은 거의 없다.</strong> 정적으로 생성된 배열은 배열 선언 시 배열의 크기를 상수 형태로 지정해주기 때문에 항상 지정된 크기의 영상만을 사용해야 하는 제약이 생겨 다양한 크기의 영상을 다루기에 적합하지 않다. 또 다른 문제점은 이러한 정적 배열을 지역 변수로 사용할 경우 최대 할당 가능한 배열 크기에 제약이 있다는 점이다. 일반적으로 지역 변수로 사용할 수 있는 메모리 영역에는 한계가 있기 때문에 대략 1024 * 1024보다 큰 배열을 만들 수 없다. 그렇기 때문에 <strong>실제 영상 처리 프로그래밍에서는 정적 배열 대신 프로그램 동작 시 배열의 크기를 결정할 수 있는 동적 배열을 주로 사용한다.</strong></p>
+
+<p>2차원 동적 배열은 이중 포인터를 이용하여 생성한다. 가로 크기가 w이고, 세로 크기가 h인 영상을 표현하는 2차원 배열을 동적 생성하는 방법은 다음과 같다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">**</span> <span class="n">p</span><span class="p">;</span> <span class="c1">// 이중 포인터 p 선언</span>
+<span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">[</span><span class="n">h</span><span class="p">];</span> <span class="c1">// new한 h 크기만큼의 포인터 타입의 공간을 p에 대입</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">h</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="p">[</span><span class="n">w</span><span class="p">];</span> <span class="c1">// 포인터 타입 공간 p[i]에 w 크기만큼의 1차원 배열(데이터) 공간 할당</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>일단 unsigned char 포인터 타입의 메모리 공간을 h 크기만큼 동적 할당하고, 다시 w 크기만큼의 공간을 h 횟수만큼 동적 할당한다. 위와 같이 코드를 작성할 경우, p는 정적 배열과 같은 형식으로 사용할 수 있다. 즉, 가장 첫 번째 원소는 p[0][0]으로 접근할 수 있고, 맨 마지막 배열 원소는 p[h - 1][w - 1] 형태로 접근할 수 있다.</p>
+
+<p><img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/a9e637f5-9add-481a-a076-fdfbdf37bc8c" alt="img1" /></p>
+
+<p>위 그림은 앞의 코드를 이용하여 동적 배열을 생성하는 과정을 보여준다. p는 이중 포인터(unsigned char**)이고, p[0]부터 p[h - 1]까지는 동적 할당으로 생성된 포인터(unsigned char*) 타입의 공간이다. 포인터형 변수는 32비트 운영체제에서는 4바이트의 크기를 갖고, 64비트 운영체제에서는 8바이트의 크기를 갖는다.</p>
+
+<p>new 연산자에 의해 동적 생성된 메모리 공간은 쓰레기 값이라고 부르는 임의의 값들이 들어가 있다. 만약 2차원 배열을 동적 생성하면서 그 내부의 값을 모두 0으로 초기화하고자 한다면 다음과 같은 형태로 코드를 작성해야 한다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;memory.h&gt;</span><span class="cp">
+</span><span class="p">...</span>
+<span class="kt">unsigned</span> <span class="kt">char</span><span class="o">**</span> <span class="n">p</span><span class="p">;</span>
+<span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">[</span><span class="n">h</span><span class="p">];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">h</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="p">[</span><span class="n">w</span><span class="p">];</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span> <span class="o">*</span> <span class="n">w</span><span class="p">);</span> <span class="c1">// sizeof(unsigned char) == 1</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 코드에서 for 루프 안에 함수 호출이 한 줄 추가되었는데, <em>memset</em>이라는 함수는 특정 메모리 주소부터 일정 크기만큼 메모리 공간의 값을 설정하는 함수이며 원형은 아래와 같다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; void *memset(void *dest, int c, size_t count);
+</code></pre></div></div>
+
+<p>그러므로 <code class="highlighter-rouge">memset(p[i], 0, sizeof(unsigned char) * w);</code> 코드의 의미는 p[i]가 가리키는 메모리 공간으로부터 sizeof(unsigned char) * w에 해당하는 크기의 메모리 공간을 모두 0으로 채우라는 의미이다. 그러므로 위의 코드로 생성된 2차원 동적 배열은 모두 초기값 0을 가지게 된다. memset 함수를 사용하려면 memory.h 또는 string.h 파일을 포함해야 한다.</p>
+
+<p>동적 생성된 2차원 배열의 원소는 for 루프 2개를 중첩하여 사용하는 이중 for 루프를 이용하여 접근한다. 예를 들어 앞에서 생성한 2차원 동적 배열 p의 모든 원소의 값을 1씩 증가하는 기능을 코드로 작성하면 다음과 같다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">h</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">w</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 코드에서 w는 배열의 가로 크기이고, h는 세로 크기를 나타낸다. 이중 for 루프에서 바깥쪽 for 루프는 y축에 대한 for 루프이고, 안쪽 for 루프는 x축에 대한 for 루프이다. y축에 대한 for 루프의 인덱스는 j를 주로 사용하고, x축에 대한 for 루프의 인덱스는 i를 사용한다. 여기서는 배열의 인덱스에서 i는 x축의 좌표를 의미하고, j는 y축의 좌표를 나타낼 것이다.</p>
+
+<p>앞의 코드에서 한 가지 주의할 점은 p[j][i]에 저장할 수 있는 값의 범위는 0부터 255 사이라는 점이다. 이는 앞에서 동적 배열 p를 생성할 때, 자료형을 unsigned char로 설정하였기 때문이다. 이 범위를 벗어난 값을 저장하려고 할 경우, 자동으로 0부터 255 사이의 값으로 변환되어 저장된다. 예를 들어 현재 p[j][i]에 들어 있는 값이 255인 경우, (p[j][i] + 1)에 해당하는 값은 256이지만 실제 <code class="highlighter-rouge">p[j][i] += 1;</code> 코드에 의해 새로 변경되는 p[j][i]의 값은 0으로 바뀌어 저장된다. 그러므로 실제 영상 처리 알고리즘 구현에서는 이러한 예외 상황에 대한 처리도 고려해주어야 한다.</p>
+
+<p>동적으로 생성한 배열은 사용이 끝나면 반드시 메모리를 해제해주어야 한다. 지역 변수로 선언된 정적 배열은 그 배열을 사용한 블록 또는 함수가 종료되면 자동으로 메모리 공간이 사라지지만, 동적 배열은 그렇지 않다. 영상과 같이 대용량의 데이터를 다루는 작업을 할 때, 메모리 공간의 해제를 제때 해주지 않으면 프로그램이 오작동 할 가능성이 생길 수 있기 때문에 주의해야 한다. 앞에서 동적 할당한 2차원 배열 p를 해제하기 위해서는 다음과 같이 코드를 작성해야 한다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">h</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">delete</span><span class="p">[]</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="k">delete</span><span class="p">[]</span> <span class="n">p</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>동적 할당된 2차원 배열의 메모리를 해제하는 방법은 동적 배열을 할당하는 방법의 반대이다. 위 코드에서 for 루프 안의 <code class="highlighter-rouge">delete[] p[i];</code> 문장은 그림에서 ‘동적 할당된 데이터 공간’으로 표현한 메모리를 해제하는 역할을 한다. 맨 아랫줄의 <code class="highlighter-rouge">delete[] p;</code> 문장은 그림에서 ‘동적 할당된 포인터형 공간’으로 표현한 메모리를 해제한다. 앞서 new 연산자로 메모리를 할당할 때 괄호 연산자([])를 사용하여 배열 형태로 메모리를 할당하였으므로 delete 연산자로 메모리를 해제할 때에도 동일하게 괄호 연산자를 사용해야 한다.</p>
+
+<p><br /></p>
+
+<h2 id="변형된-2차원-배열-동적-할당"><strong>변형된 2차원 배열 동적 할당</strong></h2>
+
+<p>사실 앞에서 설명한 방법은 동적 할당된 전체 메모리 공간이 연속적이라고 100% 보장할 수가 없으며, 그렇기 때문에 영상 전체 픽셀을 1차원 배열처럼은 사용할 수 없다. (경우에 따라서는 2차원 영상을 1차원 데이터처럼 사용하는 것이 필요할 때가 있다.)</p>
+
+<p>지금부터는 하나의 영상을 단일 메모리 블록으로 할당하고, 이를 2차원 배열과 동일한 방식으로 접근할 수 있는 방법을 설명한다. 메모리를 할당하고 해제하는 방식은 앞서 알아본 방법과 조금 다르지만, 영상의 픽셀 데이터를 2차원 배열처럼 사용하는 방식은 완전히 동일하며, 1차원 배열처럼도 사용할 수 있는 기능이 추가되었다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;memory.h&gt;</span><span class="cp">
+</span><span class="p">...</span>
+<span class="kt">unsigned</span> <span class="kt">char</span><span class="o">**</span> <span class="n">p</span><span class="p">;</span>
+<span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">[</span><span class="n">h</span><span class="p">];</span>
+<span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="p">[</span><span class="n">w</span> <span class="o">*</span> <span class="n">h</span><span class="p">];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">h</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+    <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">;</span>
+<span class="n">memset</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">w</span> <span class="o">*</span> <span class="n">h</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>위 코드를 보면 new 연산자를 이용하여 메모리를 할당하는 작업은 두 번만 발생한다. 일단 unsigned char* 타입의 메모리 공간을 h 크기만큼 동적 할당하여 p에 저장하였다. 그러므로 p[0]부터 p[h-1]까지는 모두 unsigned char* 타입을 저장할 수 있게 되었다. 이 중 맨 첫 번째 p[0]은 영상 전체 크기(w * h)에 해당하는 메모리 공간을 할당하여 그 주소를 받게 하였다. 나머지 p[1]부터 p[h-1]까지는 실질적인 new 연산자에 의한 동적 할당을 하지는 않고, 다만 p[0]이 가리키고 있는 영상 전체 메모리 영역의 특정 주소를 가리키도록 설정되어 있다.</p>
+
+<p>아래 그림은 변형된 2차원 배열 동적 할당의 동작 방식을 도식적으로 보여준다. <code class="highlighter-rouge">p = new unsigned char*[h];</code> 문장이 수행되면 ‘동적 할당된 포인터형 공간’이라고 표기된 메모리 공간이 할당된다. 그리고 그 아랫줄에서 영상 전체 픽셀 개수만큼의 데이터 공간을 할당하고 그 시작 주소를 p[0]에 저장한다. 그 다음 for 루프에서는 p[1]부터 p[h - 1] 변수가 영상의 두 번째 줄부터 마지막 줄의 시작 위치 주소를 가리키도록 설정하였다. 그리고 <code class="highlighter-rouge">memset(p[0], 0, w * h);</code> 문장은 할당된 전체 데이터 공간의 값을 0으로 초기화한다.</p>
+
+<p><img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/251ed847-b7c9-4a53-a03f-11eb87cf3b31" alt="img2" /></p>
+
+<p>이렇게 할당된 메모리 공간에 접근하는 방법은 2차원 배열을 사용하는 방식과 완전히 동일하다. 그러므로 2차원 동적 배열 p의 모든 원소의 값을 1씩 증가하는 코드는 앞에서 설명한 것과 동일하게 이중 for 루프를 이용하여 구현할 수 있다. 다만 변형된 2차원 배열 동적 생성 방법을 사용하면 단일 for 루프를 이용하여 1차원 배열처럼 원소 값을 참조할 수 있다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">w</span> <span class="o">*</span> <span class="n">h</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">p1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 소스 코드에서는 unsigned char* 타입의 변수 p1에 p[0]을 할당하고, p1 변수를 1차원 배열처럼 사용하고 있다. for 루프에서는 배열의 전체 크기인 (w * h)만큼을 반복하면서 전체 원소에 1을 더하는 것을 볼 수 있다.</p>
+
+<p>변형된 방식으로 할당했던 2차원 동적 배열 또한 사용이 끝나면 사용자가 직접 메모리를 해제해주어야 한다. 메모리 해제는 delete[] 연산자를 사용하며 메모리 할당했던 방식을 거꾸로 진행하면 된다. 코드는 다음과 같다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">delete</span><span class="p">[]</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="k">delete</span><span class="p">[]</span> <span class="n">p</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>실제 new 연산자로 메모리 공간을 할당 받은 것이 두 번이었으므로 delete[] 연산 또한 두 번이면 충분하다. p[0]에 할당된 메모리 공간을 먼저 delete하고, 그 다음에 p를 delete하는 순서에 유의한다.</p>
+
+<p><br /></p>
+
+          </div>
+          <!-- <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=%EC%98%81%EC%83%81+%EC%B2%98%EB%A6%AC+%EA%B0%9C%EC%9A%94%20-%20https://ufolozie.github.io/posts/ip-1" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://ufolozie.github.io/posts/ip-1" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div> -->
+
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    <!-- Chalk is a high quality, completely customizable, performant and 100% free
+    blog template for Jekyll built by
+    <a href="/about" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>. -->
+    © 2021 - 2025
+    <a href="/about" title="About me"> ufolozie</a>. 
+    Some rights reserved.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-3ee2c63bbac916f96cd7f90e83ab767f058ead1301444c9966f5156911c8be7f.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>

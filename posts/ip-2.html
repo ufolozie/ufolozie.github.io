@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- <title>ufolozie | BMP 파일의 이해</title> -->
+  <!-- 브라우저 탭 표시: 메인 페이지 외에는 '페이지 타이틀 | 사이트명'으로 쓰도록 설정 -->
+  <title>
+    
+      BMP 파일의 이해 | ufolozie
+    
+  </title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="BMP 파일의 이해">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ufolozie.github.io/posts/ip-2">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="ufolozie">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://ufolozie.github.io/posts/ip-2">
+  <meta name="twitter:title" content="BMP 파일의 이해">
+  <meta name="twitter:description" content="">
+
+  
+    <meta property="og:image" content="https://ufolozie.github.io/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://ufolozie.github.io/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://ufolozie.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="ufolozie Last 10 blog posts" />
+
+  <!-- Google Fonts: Lato + Asta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-beedd90315537e310b254bec4805e074d2f5e41fd7907ae045f21200909e1cd0.css">
+    
+
+  
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <!-- KaTeX JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="ufolozie">ufolozie</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-about">
+  <use href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about" xlink:href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+      <li>
+        <a href="https://github.com/ufolozie" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="mailto:dbryu6@gmail.com" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
+  <use href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email" xlink:href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+<!-- 
+  <ul class="header-tags scrollappear">
+    
+    
+      
+        <li><a href="/tag/AI">Ai</a></li>
+    
+      
+        <li><a href="/tag/CS">Cs</a></li>
+    
+      
+        <li><a href="/tag/Java">Java</a></li>
+    
+      
+        <li><a href="/tag/JavaScript">Javascript</a></li>
+    
+      
+        <li><a href="/tag/Python">Python</a></li>
+    
+      
+        <li><a href="/tag/네트워크">네트워크</a></li>
+    
+      
+        <li><a href="/tag/영상처리">영상처리</a></li>
+    
+  </ul>
+ -->
+<!-- About me 페이지에서만 태그 네비게이션(tag_nav_enabled)이 뜨지 않도록 수정 -->
+
+  <ul class="header-tags scrollappear">
+    
+    
+      
+      
+        <!-- <li><a href="/tag/AI">Ai</a></li> -->
+        <li><a href="/tag/AI">AI</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/CS">Cs</a></li> -->
+        <li><a href="/tag/CS">CS</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/Java">Java</a></li> -->
+        <li><a href="/tag/Java">Java</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/JavaScript">Javascript</a></li> -->
+        <li><a href="/tag/JavaScript">JavaScript</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/Python">Python</a></li> -->
+        <li><a href="/tag/Python">Python</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/네트워크">네트워크</a></li> -->
+        <li><a href="/tag/네트워크">네트워크</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/영상처리">영상처리</a></li> -->
+        <li><a href="/tag/영상처리">영상처리</a></li>
+      
+    
+  </ul>
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>BMP 파일의 이해</h1>
+            <p></p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    April 8, 2023
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      8 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/AI" title="See all posts with tag 'AI'">AI</a>
+    
+      
+      <a href="/tag/영상처리" title="See all posts with tag '영상처리'">영상처리</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <p>영상을 컴퓨터에 보관하기 위해서는 파일 형태로 저장해야 한다. 영상을 저장할 수 있는 파일 포맷으로는 BMP, JPG, GIF, PNG, TIF 등이 있는데, 이 중 BMP 포맷은 그 구조가 상당히 단순하여 Windows에서 영상을 파일로 표현할 때 가장 기본적으로 사용된다.</p>
+
+<p><br /></p>
+
+<h2 id="비트맵-개요"><strong>비트맵 개요</strong></h2>
+
+<ul>
+  <li><strong>비트맵</strong>(bitmap)이란?
+    <ul>
+      <li>컴퓨터에서 영상을 표현하는 대표적인 방법</li>
+      <li>비트들의 집합. 여러 개의 비트가 모여 한 점(픽셀)의 색상을 표현하고, 색상을 가진 점들이 모여 영상을 구성함.</li>
+      <li>압축 기법을 사용하지 않고 표현이 직관적이어서 분석이 용이하고, 단순히 그림을 복사하여 화면에 보여주기 때문에 출력 속도가 빠름</li>
+      <li>픽셀 정보를 모두 다 저장해야 하기 때문에 메모리 용량을 많이 차지함</li>
+    </ul>
+  </li>
+  <li>비트맵 종류
+    <ul>
+      <li>장치 의존 비트맵 (DDB, Device Dependent Bitmap): 특정 장치에서 만들어진 DDB는 다른 출력 장치에서 정상적인 색상으로 표현되지 않을 수 있음</li>
+      <li><strong>장치 독립 비트맵</strong> (DIB, Device Independent Bitmap): 자신의 색상을 표현하는 색상 테이블이 존재하여 출력 장치가 달라지더라도 어디에서나 제대로 출력됨</li>
+    </ul>
+  </li>
+</ul>
+
+<p>사진과 같은 영상을 표현하기 위해서는 DIB를 사용한다.</p>
+
+<p>널리 사용되고 있는 BMP, JPG, GIF, PNG 등의 영상 파일 포맷들도 화면에 출력하기 위해서는 파일을 분석하여 DIB 포맷으로 전환해야 한다.</p>
+
+<p><img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/8c302c4d-b8e4-4859-a11b-dc21fc017910" alt="table1" /></p>
+
+<p><br /></p>
+
+<h2 id="bmp-파일의-구조"><strong>BMP 파일의 구조</strong></h2>
+
+<p>BMP 파일이란 확장자가 “BMP”인 파일을 말하며, 이는 Windows 운영체제에서 DIB를 저장하기 위해 사용되는 파일 형식이다. 또한 BMP 파일은 DIB 구조를 그대로 파일로 저장한 형태이기도 하다. BMP 파일은 그 자체에 대한 정보와 비트맵 영상에 대한 정보, 그리고 각 픽셀의 색상 정보를 나타내는 부분으로 구성되어 있다.</p>
+
+<p><img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/b100e9d2-630b-4132-847d-2c719d382c92" alt="img1" width="90%" style="display: block; margin: auto;" /></p>
+
+<ul>
+  <li><strong>비트맵 파일 헤더</strong>: BMP 파일 자체에 대한 정보를 담고 있는 영역</li>
+  <li><strong>비트맵 정보 헤더</strong>: 비트맵 영상의 크기, 색상 수 등에 관한 정보를 담고 있는 영역</li>
+  <li><strong>색상 테이블/팔레트</strong>: 비트맵 영상의 색상 정보를 담고 있는 부분. 비트맵의 색상 수에 따라 존재하지 않을 수도 있음.</li>
+  <li><strong>픽셀 데이터</strong>: 각 픽셀의 색상 정보를 표현하는 공간. 비트맵 영상 그 자체이며 파일마다 상이함.</li>
+</ul>
+
+<p>위 그림에서 BITMAPFILEHEADER, BITMAPINFOHEADER, RGBQUAD는 Windows 운영체제에 정의되어 있는 구조체 이름이다.</p>
+
+<p>BITMAPINFOHEADER, 색상 테이블, 픽셀 데이터 부분을 합쳐 <em>DIB 구조</em>라고 부르며, Windows에서 비트맵을 화면에 출력하기 위해서는 이 부분만 있으면 된다. 보통의 DIB 출력 함수들은 DIB 구조의 시작 위치, 즉 BITMAPINFOHEADER 구조체의 시작 주소와 픽셀 데이터의 시작 주소를 인자로 넘겨받아 화면 출력을 수행한다.</p>
+
+<hr />
+
+<p>💡 C/C++ 프로그램에서 BMP 파일을 다룰 경우, windows.h 파일을 include한다. 원래 BITMAPFILEHEADER, BITMAPINFOHEADER, RGBQUAD 구조체들은 모두 wingdi.h 파일에 정의되어 있지만, windows.h 파일에서 wingdi.h 파일을 포함하면서 더 다양한 windows 관련 사항들을 정의하기 때문이다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="비트맵-파일-헤더"><strong>비트맵 파일 헤더</strong></h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span> <span class="k">struct</span> <span class="nc">tagBITMAPFILEHEADER</span> <span class="p">{</span>
+    <span class="n">WORD</span> <span class="n">bfType</span><span class="p">;</span>
+    <span class="n">DWORD</span> <span class="n">bfSize</span><span class="p">;</span>
+    <span class="n">WORD</span> <span class="n">bfReserved1</span><span class="p">;</span>
+    <span class="n">WORD</span> <span class="n">bfReserved2</span><span class="p">;</span>
+    <span class="n">DWORD</span> <span class="n">bfOffBits</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">BITMAPFILEHEADER</span><span class="p">,</span> <span class="n">FAR</span> <span class="o">*</span><span class="n">LPBITMAPFILEHEADER</span><span class="p">,</span> <span class="o">*</span><span class="n">PBITMAPFILEHEADER</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">byType</code> : 비트맵 파일임을 나타내기 위한 지시자. 항상 ‘BM’이라는 값을 가지며, 영문자 ‘B’와 ‘M’은 16진수로 각각 0x42, 0x4D로 표현됨.</li>
+  <li><code class="highlighter-rouge">bfSize</code> : 해당 BMP 파일의 크기를 바이트 단위로 나타냄</li>
+  <li><code class="highlighter-rouge">bfReserved1</code>, <code class="highlighter-rouge">bfReserved2</code> : 추후 사용하기 위해 예약된 값. 현재는 사용하지 않는 멤버이며, 항상 0의 값을 가짐.</li>
+  <li><code class="highlighter-rouge">bfOffBits</code> : BITMAPFILEHEADER 구조체의 시작 위치부터 실제 픽셀 데이터 정보를 담고 있는 비트맵 비트까지의 바이트 오프셋을 나타냄. 즉, [BIsTMAPFILEHEADER 크기 + BITMAPINFOHEADER 크기 + 색상 테이블 크기]와 같음.<br />
+<em>*오프셋: 처음부터 주어진 요소나 지점까지의 변위차를 나타내는 정수형</em></li>
+</ul>
+
+<p>이때 WORD 타입은 2바이트 크기를 가지며, DWORD과 뒤에 나오는 LONG 타입은 4바이트의 크기를 갖는다. 그러므로 BITMAPFILEHEADER 구조체의 전체 크기는 14바이트(WORD 3개, DWORD 2개)이다.</p>
+
+<p><br /></p>
+
+<h2 id="비트맵-정보-헤드"><strong>비트맵 정보 헤드</strong></h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="nc">tagBITMAPINFOHEADER</span> <span class="p">{</span>
+    <span class="n">DWORD</span> <span class="n">biSize</span><span class="p">;</span>
+    <span class="n">LONG</span> <span class="n">biWidth</span><span class="p">;</span>
+    <span class="n">LONG</span> <span class="n">biHeight</span><span class="p">;</span>
+    <span class="n">WORD</span> <span class="n">biPlane</span><span class="p">;</span>
+    <span class="n">WORD</span> <span class="n">biBitCount</span><span class="p">;</span>
+    <span class="n">DWORD</span> <span class="n">biCompression</span><span class="p">;</span>
+    <span class="n">DWORD</span> <span class="n">biSizeImage</span><span class="p">;</span>
+    <span class="n">LONG</span> <span class="n">biXPelsPerMeter</span><span class="p">;</span>
+    <span class="n">LONG</span> <span class="n">biYPelsPerMeter</span><span class="p">;</span>
+    <span class="n">DWORD</span> <span class="n">biClrUsed</span><span class="p">;</span>
+    <span class="n">DWORD</span> <span class="n">biClrImportant</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">BITMAPINFOHEADER</span><span class="p">,</span> <span class="n">FAR</span> <span class="o">*</span><span class="n">LPBITMAPINFOHEADER</span><span class="p">,</span> <span class="o">*</span><span class="n">PBITMAPINFOHEADER</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">biSize</code> : 구조체를 저장하기 위해 필요한 바이트 수를 나타내며, 항상 40임</li>
+  <li><code class="highlighter-rouge">biWidth</code> : 비트맵의 가로 크기를 픽셀 단위로 나타냄</li>
+  <li><code class="highlighter-rouge">biHeight</code> : 비트맵의 세로 크기를 픽셀 단위로 나타냄. 이 값이 양수이면 픽셀 데이터는 상하가 뒤집힌 상태로 저장되며, 음수이면 정상적인 상태로 저장됨. 일반적으로는 양수로 저장됨.</li>
+  <li><code class="highlighter-rouge">biPlane</code> : 비트맵을 화면 등에 보여줄 때 필요한 플레인 수를 나타내며, 항상 1임</li>
+  <li><code class="highlighter-rouge">biBitCount</code> : 픽셀 하나를 표현하기 위해 필요한 비트 수를 나타냄. 1, 4, 8, 16, 24, 32의 값을 가질 수 있음. 예컨대 이 값이 8이면 256(=2⁸)색을 표현할 수 있음.</li>
+  <li><code class="highlighter-rouge">bitCompression</code> : 압축 유형을 나타냄. 일반적으로 BMP 파일은 압축을 하지 않음을 나타내는 BI_RGB 값을 가짐.</li>
+  <li><code class="highlighter-rouge">biSizeImage</code> : DIB 구조에서 픽셀 데이터를 저장할 때 필요한 메모리 공간의 크기를 나타냄. 이 값은 biWidth × biHeight × (biBitCount / 8)으로 계산됨. 만약 비트맵 영상의 가로 크기가 4의 배수가 아니면 4의 배수에 맞게 여분의 바이트가 추가되어 계산됨. biCompression이 BI_RGB인 경우, 이 값은 0이 될 수도 있음.</li>
+  <li><code class="highlighter-rouge">biXPelsPerMeter</code> : 가로 방향으로 미터당 픽셀 수를 나타냄</li>
+  <li><code class="highlighter-rouge">biYPelsPerMeter</code> : 세로 방향으로 미터당 픽셀 수를 나타냄</li>
+  <li><code class="highlighter-rouge">biClrUsed</code> : 색상 테이블에서 실제 사용되는 색상 수를 나타냄. 이 값이 0이면 biBitCount에서 지정한 색상 수를 모두 사용하는 것을 나타내고, 0이 아니면 RGBQUAD 구조체 배열의 크기를 지정함. 일반적으로 0임.</li>
+  <li><code class="highlighter-rouge">biClrImportant</code> : 비트맵을 화면에 표현하기 위해 필요한 색상 인덱스의 수를 나타냄. 0이면 모든 색상이 필요함을 나타내며, 일반적으로 0임.</li>
+</ul>
+
+<p>BITMAPINFOHEADER 구조체의 크기는 40바이트(WORD 2개, DWORD 5개, LONG 4개)이다.</p>
+
+<p><br /></p>
+
+<h2 id="색상-테이블팔레트"><strong>색상 테이블/팔레트</strong></h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span> <span class="k">struct</span> <span class="nc">tagRGBQUAD</span> <span class="p">{</span>
+    <span class="n">BYTE</span> <span class="n">rgbBlue</span><span class="p">;</span>
+    <span class="n">BYTE</span> <span class="n">rgbGreen</span><span class="p">;</span>
+    <span class="n">BYTE</span> <span class="n">rgbRed</span><span class="p">;</span>
+    <span class="n">BYTE</span> <span class="n">rgbReserved</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">RGBQUAD</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">rgbBlue</code> : 파란색 색상 정보를 표현함</li>
+  <li><code class="highlighter-rouge">rgbGreen</code> : 녹색 색상 정보를 표현함</li>
+  <li><code class="highlighter-rouge">rgbRed</code> : 빨간색 색상 정보를 표현함</li>
+  <li><code class="highlighter-rouge">rgbReserved</code> : 사용하지 않으며, 항상 0으로 표현함</li>
+</ul>
+
+<p>BYTE 타입은 1바이트의 크기를 가지므로 RGBQUAD 구조체의 크기는 4바이트(BYTE 4개)이다.</p>
+
+<p>그레이스케일 영상의 BMP 파일에는 256단계의 무채색을 표현하는 RGBQUAD 배열이 존재하며, 각각의 원소에는 rgbBlue, rgbGreen, rgbRed 값이 동일한 값으로 설정되어 있다. 그레이스케일 비트맵 파일에서 팔레트는 검정색에 해당하는 (0, 0, 0, 0)부터 시작하여 흰색에 해당하는 (255, 255, 255, 0)까지 차례대로 밝기 값이 증가하도록 설정되어 있다. 즉, 그레이스케일 BMP 파일은 회색조의 고정된 형태의 색상 테이블을 가지는 256 색상 BMP 파일의 특별한 형태라고 말할 수 있다. 이때 색상 테이블 영역의 크기는 256 * 4 = 1024바이트이다.</p>
+
+<p>반면 트루컬러 비트맵 파일은 팔레트가 존재하지 않는다. 트루컬러 영상에서 표현 가능한 색상 수가 16, 777, 216(=2²⁴)이기 때문에 팔레트를 만드는 것 자체가 BMP 파일 용량에 무리를 줄 수 있기 때문이다.</p>
+
+<p><br /></p>
+
+<h2 id="픽셀-데이터"><strong>픽셀 데이터</strong></h2>
+
+<p>그레이스케일 비트맵의 경우, 1바이트를 사용하여 각 픽셀의 그레이스케일을 표현하는 RGBQUAD 배열의 인덱스를 저장한다.</p>
+
+<p>색상 테이블이 없는 트루컬러 비트맵의 경우에는 픽셀 하나 당 3바이트를 사용하여 픽셀 정보를 표현한다. 이때 3바이트는 차례대로 파란색(B), 녹색(G), 빨간색(R)의 정보를 나타낸다. B, G, R 각각의 색상 성분은 0~255 사이의 정숫값으로 표현된다.</p>
+
+<p>일반적으로 비트맵은 상하가 뒤집힌(bottom-up) 형태로 저장된다. BITMAPINFOHEADER 구조체의 biHeight 값이 양수로 저장되어 있을 경우에 뒤집힌 상태로 저장된다는 말이 정확한 표현이지만, 대부분의 경우 양수로 저장되기 때문에 항상 뒤집힌 상태라고 생각해도 무방하다.</p>
+
+<p><img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/4f17b4a3-f76a-44d9-a65c-64e7ffc567fb" alt="img2" /></p>
+
+<p>또한 영상이 비트맵 형태로 저장될 때, 효율적인 데이터 관리를 위해 영상의 가로 크기를 4의 배수 형태로 저장함에 주의해야 한다. 예를 들어 그레이스케일 영상의 크기가 3×3이라고 하더라도, BMP 파일로 저장될 때에는 픽셀 데이터 배열에 4×3(가로×세로)의 크기로 저장된다는 뜻이다. 실제 비트맵의 가로 픽셀 크기는 3이지만, 4바이트 단위로 저장되기 때문에 여분의 1바이트를 추가하는 것이다. 3×3 크기의 트루컬러 비트맵의 경우, 가로 한 줄의 픽셀들은 3(픽셀)×3(바이트)=9바이트면 표현할 수 있지만, 실제 저장 시에는 9보다 큰 4의 배수인 12바이트를 사용한다. 여분으로 추가되는 픽셀 위치에는 임의의 값이 할당되며, 실제 프로그램에서는 사용하지 않는다.</p>
+
+<p><img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/cbc48d00-c3f9-4d4c-aee8-6f30134a184d" alt="img3" /></p>
+
+<hr />
+
+<p>🎨 컴퓨터에서는 빛의 3원색인 빨간색(Red), 녹색(Green), 파란색(Blue)을 이용하여 색을 표현한다. 각각의 색 성분은 0부터 255 사이의 값을 가질 수 있으며, 값이 클수록 해당 색 성분을 많이 가지고 있음을 의미한다. 컴퓨터에서 이 값을 표현하기 위해서는 R, G, B 각각 1바이트를 필요로 하며, 결과적으로 트루컬러 1픽셀의 색상은 3바이트로 표현이 가능하다.</p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="dib-화면-출력---setdibitstodevice-함수"><strong>DIB 화면 출력 - SetDIBitsToDevice 함수</strong></h2>
+
+<p>SetDIBitsToDevice 함수는 비트맵을 원본 크기 그대로 화면에 출력한다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">SetDIBitsToDevice</span> <span class="p">(</span>
+    <span class="n">HDC</span> <span class="n">hdc</span><span class="p">,</span>                 <span class="c1">// 출력 대상(비트맵)의 DC 핸들</span>
+    <span class="kt">int</span> <span class="n">XDest</span><span class="p">,</span>               <span class="c1">// 출력 대상의 좌상귀 x 좌표</span>
+    <span class="kt">int</span> <span class="n">YDest</span><span class="p">,</span>               <span class="c1">// 출력 대상의 좌상귀 y 좌표</span>
+    <span class="n">DWORD</span> <span class="n">dwWidth</span><span class="p">,</span>           <span class="c1">// DIB 원본 사각형 너비 (가로 픽셀 크기)</span>
+    <span class="n">DWORD</span> <span class="n">dwHeight</span><span class="p">,</span>          <span class="c1">// DIB 원본 사각형 높이 (세로 픽셀 크기)</span>
+    <span class="kt">int</span> <span class="n">XSrc</span><span class="p">,</span>                <span class="c1">// DIB 원본의 좌상귀 x 좌표</span>
+    <span class="kt">int</span> <span class="n">YSrc</span><span class="p">,</span>                <span class="c1">// DIB 원본의 좌상귀 y 좌표</span>
+    <span class="n">UINT</span> <span class="n">uStartScan</span><span class="p">,</span>         <span class="c1">// 첫 번째 스캔 라인</span>
+    <span class="n">UINT</span> <span class="n">cScanLines</span><span class="p">,</span>         <span class="c1">// 출력할 스캔 라인의 개수</span>
+    <span class="n">CONST</span> <span class="n">VOID</span> <span class="o">*</span><span class="n">lpvBits</span><span class="p">,</span>     <span class="c1">// 픽셀 데이터 시작 주소</span>
+    <span class="n">CONST</span> <span class="n">BITMAPINFO</span> <span class="o">*</span><span class="n">lpbmi</span><span class="p">,</span> <span class="c1">// BITMAPINFO 구조체 시작 주소</span>
+    <span class="n">UINT</span> <span class="n">fuColorUse</span>          <span class="c1">// RGB 또는 색상 테이블 인덱스</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>먼저 해당 윈도우의 DC 핸들 값을 SetDIBitsToDevice 함수의 첫 번째 인자로 전달해야 한다. 기본적으로 이 함수는 입력 DIB 픽셀 데이터의 (XSrc, YSrc) 좌표로부터 가로 dwWidth, 세로 dwHeight 크기만큼의 사각형 영역을 출력 대상 좌표 (XDest, YDest)에 동일 크기로 출력한다. 비트맵 전체를 출력하는 경우 uStartScan은 0이고, cScanLines는 dwHeight와 동일하다. XSrc, YSrc, uStartScan, cScanLines 등을 적절하게 조합하여 원본 비트맵의 전체 또는 일부분만 출력할 수도 있다. lpvBits는 픽셀 데이터의 시작 주소를 받는다. lpbmi는 BITMAPINFOHEADER 구조체의 시작 주소를 넘겨주면 된다. 마지막으로 fuColorUse는 DIB 출력 시 색상 테이블 사용 방식을 지정하는데, 보통 DIB_RGB_COLORS를 지정하면 된다.</p>
+
+<p>사실 lpbmi는 BITMAPINFOHEADER 구조체의 주소라기보다는 BITMAPINFO라는 구조체의 시작 주소를 의미한다. BITMAPINFO 구조체는 wingdi.h 파일에 아래와 같이 정의되어 있다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typeof</span> <span class="k">struct</span> <span class="nc">tagBITMAPINFO</span> <span class="p">{</span>
+    <span class="n">BITMAPINFOHEADER</span> <span class="n">bmiHeader</span><span class="p">;</span>
+    <span class="n">RGBQUAD</span> <span class="n">bmiColors</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span> <span class="n">BITMAPINFO</span><span class="p">,</span> <span class="n">FAR</span> <span class="o">*</span><span class="n">LPBITMAPINFO</span><span class="p">,</span> <span class="o">*</span><span class="n">PBITMAPINFO</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>즉, BITMAPINFO는 BITMAPINFOHEADER와 색상 테이블 정보를 묶어서 만들어진 구조체라고 할 수 있으며, 결국 BITMAPINFOHEADER 시작 위치는 BITMAPINFO 구조체 시작 위치와 동일하다. 그러므로 포인터 변수의 형변환 연산자만 (BITMAPINFO*) 형태로 붙여주면 BITMAPINFOHEADER 시작 주소와 동일하게 사용할 수 있다.</p>
+
+<p><br /></p>
+
+<h2 id="dib-화면-출력---stretchdibits-함수"><strong>DIB 화면 출력 - StretchDIBits 함수</strong></h2>
+
+<p>StretchDIBits 함수는 비트맵을 확대 또는 축소하여 출력한다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">StretchDIBits</span><span class="p">(</span>
+    <span class="n">HDC</span> <span class="n">hdc</span><span class="p">,</span>                      <span class="c1">// 출력 대상의 DC 핸들</span>
+    <span class="kt">int</span> <span class="n">XDest</span><span class="p">,</span>                    <span class="c1">// 출력 대상의 좌상귀 x 좌표</span>
+    <span class="kt">int</span> <span class="n">YDest</span><span class="p">,</span>                    <span class="c1">// 출력 대상의 좌상귀 y 좌표</span>
+    <span class="kt">int</span> <span class="n">nDestWidth</span><span class="p">,</span>               <span class="c1">// 출력 대상의 사각형 너비</span>
+    <span class="kt">int</span> <span class="n">nDestHeight</span><span class="p">,</span>              <span class="c1">// 출력 대상의 사각형 높이</span>
+    <span class="kt">int</span> <span class="n">XSrc</span><span class="p">,</span>                     <span class="c1">// DIB 원본의 좌상귀 x 좌표</span>
+    <span class="kt">int</span> <span class="n">YSrc</span><span class="p">,</span>                     <span class="c1">// DIB 원본의 좌상귀 y 좌표</span>
+    <span class="kt">int</span> <span class="n">nSrcWidth</span><span class="p">,</span>                <span class="c1">// DIB 원본 사각형 너비</span>
+    <span class="kt">int</span> <span class="n">nSrcHeight</span><span class="p">,</span>               <span class="c1">// DIB 원본 사각형 높이</span>
+    <span class="n">CONST</span> <span class="n">VOID</span> <span class="o">*</span><span class="n">lpBits</span><span class="p">,</span>           <span class="c1">// 픽셀 데이터 시작 주소</span>
+    <span class="n">CONST</span> <span class="n">BITMAPINFO</span> <span class="o">*</span><span class="n">lpBitsInfo</span><span class="p">,</span> <span class="c1">// BITMAPINFO 구조체 시작 주소</span>
+    <span class="n">UINT</span> <span class="n">iUsage</span><span class="p">,</span>                  <span class="c1">// RGB 또는 색상 테이블 인덱스</span>
+    <span class="n">DWORD</span> <span class="n">dwRop</span>                   <span class="c1">// 래스터 연산 코드</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>StretchDIBits 함수가 원본 비트맵을 확대 또는 축소하여 출력할 수 있기 때문에 nDestWidth와 nDestHeight가 함수의 인자로 추가되었다. 즉, StretchDIBits 함수는 원본 DIB의 (XSrc, YSrc) 좌표로부터 가로 nSrcWidth, 세로 nSrcHeight 크기만큼의 사각형 영역을 출력 대상의 좌표 (XDest, YDest)에서 시작하여 가로 nDestWidth, 세로 nDestHeight 크기로 출력한다. 이때 nDestWidth, nDestHeight가 nSrcWidth, nSrcHeight보다 크면 원본보다 확대해서 출력하는 것이고, 작으면 축소한 형태로 출력하는 것이다. lpBits, lpBitsnfo, iUsage 인자는 이름이 약간 바뀌었지만 SetDIBitsToDevice 함수의 lpvBits, lpbmi, fuColorUse와 동일한 의미를 갖는 인자들이다. dwRop는 래스터 연산 방법을 지정할 수 있는데, 일반적인 화면 출력이라면 SRCCOPY를 지정하면 된다.</p>
+
+<p>StretchDIBits 함수를 사용하여 비트맵을 원본 크기보다 작은 크기로 출력하고자 할 경우, 출력된 영상이 전체적으로 검정색 계열로 지저분하게 출력될 수 있으므로 조심해야 한다. 이 경우 비트맵 늘이기 모드를 변경해주어야 깔끔한 영상 출력이 가능하며, Windows에서는 해당 기능을 포함한 SetStretchBltMode 함수를 제공한다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">SetStretchBltMode</span><span class="p">(</span>
+    <span class="n">HDC</span> <span class="n">hdc</span><span class="p">,</span>
+    <span class="kt">int</span> <span class="n">iStretchMode</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>두 번째 인자가 늘이기 모드를 지정하는 역할을 한다. 일반적인 사진과 같은 비트맵을 늘여서 화면에 출력하고자 할 경우에는 이 모드 값을 COLORONCOLOR으로 지정해주어야 깔끔한 영상 출력이 가능하다.</p>
+
+<p><br /></p>
+
+          </div>
+          <!-- <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=BMP+%ED%8C%8C%EC%9D%BC%EC%9D%98+%EC%9D%B4%ED%95%B4%20-%20https://ufolozie.github.io/posts/ip-2" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://ufolozie.github.io/posts/ip-2" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div> -->
+
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    <!-- Chalk is a high quality, completely customizable, performant and 100% free
+    blog template for Jekyll built by
+    <a href="/about" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>. -->
+    © 2021 - 2025
+    <a href="/about" title="About me"> ufolozie</a>. 
+    Some rights reserved.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-3ee2c63bbac916f96cd7f90e83ab767f058ead1301444c9966f5156911c8be7f.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>

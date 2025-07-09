@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- <title>ufolozie | 화질 향상 기법</title> -->
+  <!-- 브라우저 탭 표시: 메인 페이지 외에는 '페이지 타이틀 | 사이트명'으로 쓰도록 설정 -->
+  <title>
+    
+      화질 향상 기법 | ufolozie
+    
+  </title>
+  <meta name="description" content="반전 / 밝기 조절 / 명암비 조절 / 감마 보정 / 히스토그램 분석 / 히스토그램 스트레칭 / 히스토그램 균등화">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="화질 향상 기법">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ufolozie.github.io/posts/ip-4">
+  <meta property="og:description" content="반전 / 밝기 조절 / 명암비 조절 / 감마 보정 / 히스토그램 분석 / 히스토그램 스트레칭 / 히스토그램 균등화">
+  <meta property="og:site_name" content="ufolozie">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://ufolozie.github.io/posts/ip-4">
+  <meta name="twitter:title" content="화질 향상 기법">
+  <meta name="twitter:description" content="반전 / 밝기 조절 / 명암비 조절 / 감마 보정 / 히스토그램 분석 / 히스토그램 스트레칭 / 히스토그램 균등화">
+
+  
+    <meta property="og:image" content="https://ufolozie.github.io/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://ufolozie.github.io/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://ufolozie.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="ufolozie Last 10 blog posts" />
+
+  <!-- Google Fonts: Lato + Asta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-beedd90315537e310b254bec4805e074d2f5e41fd7907ae045f21200909e1cd0.css">
+    
+
+  
+
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <!-- KaTeX JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="ufolozie">ufolozie</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-about">
+  <use href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about" xlink:href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+      <li>
+        <a href="https://github.com/ufolozie" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="mailto:dbryu6@gmail.com" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
+  <use href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email" xlink:href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+<!-- 
+  <ul class="header-tags scrollappear">
+    
+    
+      
+        <li><a href="/tag/AI">Ai</a></li>
+    
+      
+        <li><a href="/tag/CS">Cs</a></li>
+    
+      
+        <li><a href="/tag/Java">Java</a></li>
+    
+      
+        <li><a href="/tag/JavaScript">Javascript</a></li>
+    
+      
+        <li><a href="/tag/Python">Python</a></li>
+    
+      
+        <li><a href="/tag/네트워크">네트워크</a></li>
+    
+      
+        <li><a href="/tag/영상처리">영상처리</a></li>
+    
+  </ul>
+ -->
+<!-- About me 페이지에서만 태그 네비게이션(tag_nav_enabled)이 뜨지 않도록 수정 -->
+
+  <ul class="header-tags scrollappear">
+    
+    
+      
+      
+        <!-- <li><a href="/tag/AI">Ai</a></li> -->
+        <li><a href="/tag/AI">AI</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/CS">Cs</a></li> -->
+        <li><a href="/tag/CS">CS</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/Java">Java</a></li> -->
+        <li><a href="/tag/Java">Java</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/JavaScript">Javascript</a></li> -->
+        <li><a href="/tag/JavaScript">JavaScript</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/Python">Python</a></li> -->
+        <li><a href="/tag/Python">Python</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/네트워크">네트워크</a></li> -->
+        <li><a href="/tag/네트워크">네트워크</a></li>
+      
+    
+      
+      
+        <!-- <li><a href="/tag/영상처리">영상처리</a></li> -->
+        <li><a href="/tag/영상처리">영상처리</a></li>
+      
+    
+  </ul>
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>화질 향상 기법</h1>
+            <p>반전 / 밝기 조절 / 명암비 조절 / 감마 보정 / 히스토그램 분석 / 히스토그램 스트레칭 / 히스토그램 균등화</p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    April 25, 2023
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      13 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/AI" title="See all posts with tag 'AI'">AI</a>
+    
+      
+      <a href="/tag/영상처리" title="See all posts with tag '영상처리'">영상처리</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <h2 id="반전"><strong>반전</strong></h2>
+
+<ul>
+  <li><strong>반전</strong>(inverse)이란?
+    <ul>
+      <li>영상에서 밝은 부분은 어둡게, 어두운 영역은 밝게 변화시키는 기법</li>
+      <li>영상의 화질 개선과는 무관</li>
+      <li>가장 간단한 영상 처리 기법 중 하나</li>
+      <li>영상 내의 모든 픽셀 값을 하나하나 반전시키는 것과 동일</li>
+    </ul>
+  </li>
+</ul>
+
+<p>각 픽셀이 0~255 사이의 값을 가지는 그레이스케일 영상에서 0은 가장 어두운 검정색을 의미하고, 255는 가장 밝은 흰색을 의미한다. 픽셀 값을 반전하기 위해서는 0에 가까운 어두운 픽셀 값은 255에 가깝게 만들어주고, 255에 가까운 밝은 픽셀은 0에 가까운 픽셀 값으로 만들어준다. 수식으로 나타내면 다음과 같다.</p>
+
+<script type="math/tex; mode=display">g(x,y) = 255 - f(x,y)</script>
+
+<p>f(x, y)는 입력 영상에서 (x, y) 좌표의 픽셀 값을, g(x, y)는 반전 연산에 의해 생성되는 결과 영상의 픽셀 값을 의미한다. 위 수식을 영상의 모든 픽셀에 대하여 수행하면 영상이 반전된다.</p>
+
+<p>영상의 반전 수식을 그래프로 나타내면 아래와 같다. x축이 입력 그레이스케일 값을, y축은 출력 그레이스케일 값을 나타낸다.<img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/92c34e6f-5d95-4133-b2d4-f73d0efb9692" alt="graph1" width="40%" style="display: block; margin: auto;" /></p>
+
+<p>그래프에서 직선의 방정식 y = 255 - x 형태로 표현될 수 있으므로, 입력 그레이스케일 값이 k라는 값을 가질 경우 출력 그레이스케일 값은 255 - k로 계산된다.</p>
+
+<h6 id="-영상의-반전-함수">&gt; 영상의 반전 함수</h6>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">IppInverse</span><span class="p">(</span><span class="n">IppByteImage</span><span class="o">&amp;</span> <span class="n">img</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetSize</span><span class="p">();</span>
+    <span class="n">BYTE</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetPixels</span><span class="p">();</span> <span class="c1">// img 영상의 픽셀 데이터를 1차원 배열처럼 접근</span>
+
+    <span class="c1">// 영상의 모든 픽셀을 순회하면서 각각의 픽셀 값을 255에서 뺀 값으로 변경</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">255</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="밝기-조절"><strong>밝기 조절</strong></h2>
+
+<p>그레이스케일 영상에서 <strong>밝기</strong>(brightness)는 바로 <strong>각 픽셀의 그레이스케일 값</strong>에 대응된다. 즉, 그레이스케일 값이 커지면 밝기가 밝아지고 그레이스케일 값이 작아지면 밝기는 어두워진다. 그러므로 밝기 조절은 다음과 같은 수식 및 그래프로 표현될 수 있다.</p>
+
+<script type="math/tex; mode=display">g(x, y) = f(x, y) + n</script>
+
+<p>n은 조절할 그레이스케일 값의 정도를 의미한다. 만약 n이 양수이면 결과 영상의 밝기는 더욱 밝아지고, 음수이면 어두워진다.</p>
+
+<p><img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/cef10232-c19d-470c-89f5-ec53ced86601" alt="graph2" width="80%" style="display: block; margin: auto;" /></p>
+
+<p>왼쪽 그래프에서는 입력 그레이스케일 값에 비해 출력 그레이스케일 값이 모두 일정 크기(n)만큼 값이 증가하게 된다. 즉, 밝기 조절 수식에서 n이 양수인 경우를 표현한 그래프이며, 영상은 전체적으로 밝아지게 될 것이다. (밝기 증가)</p>
+
+<p>오른쪽은 영상의 밝기 값이 전체적으로 작아지는 연산을 표현한 그래프이며, 결과적으로 영상은 전체적으로 어두워진다. (밝기 감소)</p>
+
+<p>이때 주의해야 할 점은 밝기 조절 함수의 결괏값이 255보다 커지거나 0보다 작아지지 않도록 설정해야 한다는 점이다. 이는 영상의 픽셀 값을 표현할 때 BYTE, 즉 unsigned char 타입의 자료형을 사용하기 때문이다.</p>
+
+<h6 id="-영상의-밝기-조절-함수">&gt; 영상의 밝기 조절 함수</h6>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">IppBrightness</span><span class="p">(</span><span class="n">IppByteImage</span><span class="o">&amp;</span> <span class="n">img</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetSize</span><span class="p">();</span>
+    <span class="n">BYTE</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetPixels</span><span class="p">();</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">limit</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 코드에서 limit 함수는 그레이스케일 값이 0보다 작아지거나 255보다 커지는 경우를 방지하는 역할을 한다. 이 함수가 필요한 이유는 밝기 조절 결괏값이 0보다 작거나 255보다 큰 값이 될 경우, BYTE 타입의 변수 p[i]에 예상치 않은 값이 저장될 수 있기 때문이다.</p>
+
+<p><br /></p>
+
+<h2 id="명암비-조절"><strong>명암비 조절</strong></h2>
+
+<p><strong>명암비</strong> 또는 <strong>대비</strong>(contrast)는 <strong>그레이스케일 값의 밝은 부분과 어두운 부분의 차이</strong>를 의미한다. 영상이 전체적으로 밝거나 어둡기만 하면 그 영상을 명암비가 작다고 표현한다. 반대로 영상의 특정 부분은 밝고 다른 부분은 어두워서 두 부분의 차이가 잘 느껴지는 영상은 명암비가 높다고 이야기한다. 일반적으로 명암비가 높은 영상은 눈으로 보기에 더 선명하다고 느낀다.</p>
+
+<p>명암비 조절 방법은 매우 다양하게 존재할 수 있다. 가장 단순한 방식은 픽셀 그레이스케일 값에 일정한 상수를 곱하는 것이다.</p>
+
+<script type="math/tex; mode=display">g(x, y) = α · f(x, y)</script>
+
+<p>위 식에서 α가 1보다 큰 실수일 경우, 작은 그레이스케일 값은 변화가 작고 큰 그레이스케일 값은 그 값이 급격히 커지게 된다. 그 결과 영상이 전체적으로 밝아지는 현상이 나타나며, α값이 조금만 커지더라도 결과 영상의 전체 픽셀 값이 255로 포화되는 현상이 발생할 수 있다. 그러므로 해당 방식은 그리 바람직하지 않다.</p>
+
+<p>명암비를 효과적으로 높이기 위해서는 밝은 픽셀의 값은 더욱 밝게, 어두운 픽셀의 값은 더욱 어둡게 만들어주어야 한다. 픽셀이 밝고 어두운 정도를 구분하는 척도를 어떻게 정의하느냐가 구현 방식의 차이를 가져올 수 있다. 단순히 그레이스케일의 중간 값인 128을 기준으로 사용할 수도 있고, 입력 영상의 전체 그레이스케일 값의 평균을 사용할 수도 있다. 그레이스케일의 중간 값 128을 기준으로 픽셀 값을 조정하는 방식을 수식으로 정리하면 다음과 같다.</p>
+
+<script type="math/tex; mode=display">g(x, y) = f(x, y) + (f(x, y) - 128) · α</script>
+
+<p>위 수식에서 α는 명암비 조절의 정도를 결정하는 명암비 조절 상수이다.</p>
+
+<ul>
+  <li>α = 0이면 g(x, y) = f(x, y) 형태가 되어 입력 영상이 그대로 출력 영상이 된다.</li>
+  <li>α &lt; 0이면 명암비가 감소되기 시작한다.</li>
+  <li>α = -1이면 g(x, y) = 128 형태로 명암비가 전혀 없는 회색 영상으로 변한다.</li>
+  <li>α &gt; 0이면 명암비가 증가된다.</li>
+  <li>α = 1이면 128보다 멀리 떨어져 있는 그레이스케일 픽셀의 값일수록 더욱 많이 변화한다.</li>
+</ul>
+
+<p><img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/7729a54a-b17c-493f-b70a-e78e04125290" alt="graph3" width="70%" style="display: block; margin: auto;" /></p>
+
+<p>왼쪽은 명암비가 줄어드는 변환을 나타내는 그래프이며, 이 그래프에서 α는 -1 &lt; α &lt; 0 사이의 값을 갖는다. 출력 영상의 픽셀이 가질 수 있는 그레이스케일 값의 범위(회색 표시 영역)가 크게 줄어들었음을 볼 수 있다. 오른쪽은 α &gt; 0인 경우를 나타내며, 명암비가 증가하는 변환이다. 이 그래프에서 명암비가 조절된 결괏값이 255보다 커지거나 0보다 작아질 경우, 그 값을 255 또는 0으로 결괏값을 고정시키고 있음을 볼 수 있다.</p>
+
+<h6 id="-영상의-명암비-조절-함수">&gt; 영상의 명암비 조절 함수</h6>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">IppContrast</span><span class="p">(</span><span class="n">IppByteImage</span><span class="o">&amp;</span> <span class="n">img</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetSize</span><span class="p">();</span>
+    <span class="n">BYTE</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetPixels</span><span class="p">();</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">BYTE</span><span class="o">&gt;</span><span class="p">(</span><span class="n">limit</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">128</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">100</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>앞서 명암비 조절 수식에서 설명한 명암비 조절 상수 α는 (n / 100)에 해당한다. α가 -1보다 큰 값을 가져야 하므로, n의 값은 -100보다 큰 정수가 입력되어야 한다.</p>
+
+<p><br /></p>
+
+<h2 id="감마-보정"><strong>감마 보정</strong></h2>
+
+<p>앞서 살펴본 영상의 반전과 밝기, 명암비 조절은 입력 그레이스케일 값과 출력 그레이스케일 값의 관계 그래프가 직선 형태로 이루어진 변환이었다. 그러나 곡선 형태의 변환 함수도 존재할 수 있다. 곡선 형태의 변환 함수 중에서도 널리 사용되는 함수는 지수 법칙 변환 함수를 사용하는 감마 보정이다.</p>
+
+<p><strong>감마 보정</strong>이란, <strong>영상 센서, 모니터, 프린터 등에서 발생하는 비선형적 반응들을 보정하는 영상 처리 알고리즘</strong>이다.</p>
+
+<p>지수 법칙 변환은 다음과 같은 수식으로 표현된다.</p>
+
+<script type="math/tex; mode=display">y = T(x) = cx^{γ}</script>
+
+<p>위 식에서 c와 γ는 양의 상수이며, 입력 x의 범위는 0에서 1까지라고 가정하자. 이 함수식에서 c는 선형적인 변화를 나타내지만 γ는 비선형적인 변환을 이끌어낸다. 지수로 사용되는 γ 값이 1인 경우에만 위 함수는 선형이 되며, 이 값이 1보다 커지거나 작아지면 비선형 함수가 된다.</p>
+
+<p><img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/58fa850a-3b96-4cdc-a224-87407a7eb10a" alt="graph4" width="40%" style="display: block; margin: auto;" /></p>
+
+<p>다양한 감마 값에 의한 지수 변환 함수를 나타낸 그래프이다. 여기서 c 값은 편의상 1로 간주하였다.</p>
+
+<p>이러한 지수 함수를 중요하게 언급하는 이유는 광학 센서, 모니터, 프린터 등의 장비들이 모두 지수 법칙의 특성을 가지기 때문이다. CRT(Cathode Ray Tube) 모니터의 경우, 입력 전압 대 밝기 표현 관계가 대략 1.8에서 2.5 사이의 γ 값에 해당하는 형태를 가진다. 요즘에 많이 사용되는 LCD(Liquid Crystal Display) 모니터의 경우 또한 γ = 2.5 정도에서 보정된다고 알려져 있다. 즉, 일반적인 모니터는 원래 신호보다 어두운 영상을 보여주고 있다는 것이다. 이러한 현상을 보정하기 위해 감마 보정이 필요하다.</p>
+
+<p>감마 보정을 구현하기 위해서는 모든 픽셀에 대하여 지수 법칙 변환을 해주면 된다. 다만 지수 법칙 변환의 입력 값 범위가 0부터 1 사이의 실숫값이기 때문에 영상의 그레이스케일 값에 적용하려면 적당한 크기로 스케일링을 해야 한다. 픽셀의 그레이스케일 값이 k라면 입력 값은 k / 255로 줄여서 입력하고, 출력 값은 다시 k × 255 형태로 크기를 키워주어야 한다.</p>
+
+<script type="math/tex; mode=display">s = T(r) = (\frac{r}{255})^{\frac{1}{γ}} × 255</script>
+
+<p>γ 값이 역수의 형태(1 / γ)로 쓰여져 있음에 유의한다. (모니터의 지수 법칙 변환 함수의 γ 값이 2.5에 해당하는 값이었다면, 감마 보정에서는 γ = 1 / 2.5의 값을 사용)</p>
+
+<h6 id="-감마-보정-함수">&gt; 감마 보정 함수</h6>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">IppGammaCorrection</span><span class="p">(</span><span class="n">IppByteImage</span><span class="o">&amp;</span> <span class="n">img</span><span class="p">,</span> <span class="kt">float</span> <span class="n">gamma</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">float</span> <span class="n">inv_gamma</span> <span class="o">=</span> <span class="mf">1.</span><span class="n">f</span> <span class="o">/</span> <span class="n">gamma</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetSize</span><span class="p">();</span>
+    <span class="n">BYTE</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetPixels</span><span class="p">();</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">BYTE</span><span class="o">&gt;</span><span class="p">(</span><span class="n">limit</span><span class="p">((</span><span class="n">pow</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="mf">255.</span><span class="n">f</span><span class="p">,</span> <span class="n">inv_gamma</span><span class="p">)</span> <span class="o">*</span> <span class="mi">255</span> <span class="o">+</span> <span class="mf">0.5</span><span class="n">f</span><span class="p">)));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>for 루프 안에서 모든 픽셀에 대한 지수 변환을 한 후, 맨 마지막에 0.5f를 더해준 것은 BYTE 타입으로 형변환할 때 반올림 효과를 주기 위함이다.</p>
+
+<p>이때 함수의 성능 개선을 위해서는 적지 않은 연산 시간을 필요로 하는 pow 함수의 반복을 제거해주는 것이 좋다. pow 함수의 인자로 사용되는 값 중에서 inv_gamma는 항상 동일한 값이며, 변하는 값은 p[i] 뿐이다. 그리고 p[i]가 가질 수 있는 값은 그레이스케일 범위인 256개 뿐이다. 그러므로 0부터 255까지의 그레이스케일 값에 대한 pow((p[i] / 255.f), inv_gamma) 값을 미리 계산해두고, 실제 매 픽셀에 대해 감마 보정을 수행할 때에는 미리 계산된 pow 함수 결괏값을 사용하면 큰 속도 향상을 얻을 수 있다. 이때 미리 계산한 pow 함수의 결괏값을 보통 배열 같은 저장 공간에 담아두는데, 이러한 배열을 <strong>룩업 테이블</strong>이라고 부른다.</p>
+
+<h6 id="-개선된-감마-보정-함수">&gt; 개선된 감마 보정 함수</h6>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">IppGammaCorrection</span><span class="p">(</span><span class="n">IppByteImage</span><span class="o">&amp;</span> <span class="n">img</span><span class="p">,</span> <span class="kt">float</span> <span class="n">gamma</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">float</span> <span class="n">inv_gamma</span> <span class="o">=</span> <span class="mf">1.</span><span class="n">f</span> <span class="o">/</span> <span class="n">gamma</span><span class="p">;</span>
+
+    <span class="kt">float</span> <span class="n">gamma_table</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">256</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">gamma_table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">pow</span><span class="p">((</span><span class="n">i</span> <span class="o">/</span> <span class="mf">255.</span><span class="n">f</span><span class="p">),</span> <span class="n">inv_gamma</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetSize</span><span class="p">();</span>
+    <span class="n">BYTE</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetPixels</span><span class="p">();</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">BYTE</span><span class="o">&gt;</span><span class="p">(</span><span class="n">limit</span><span class="p">(</span><span class="n">gamma_table</span><span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">255</span> <span class="o">+</span> <span class="mf">0.5</span><span class="n">f</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>gamma_table 배열은 [0, 1] 범위(x | a ≤ x ≤ b)로 스케일된 그레이스케일 값에 대한 지수 변환 결괏값을 담고 있다. 그러므로 gamma_table 배열이 룩업 테이블의 역할을 하고 있는 것이다.</p>
+
+<p><br /></p>
+
+<h2 id="히스토그램-분석"><strong>히스토그램 분석</strong></h2>
+
+<p><strong>히스토그램</strong>이란 <strong>영상 내에서 각 그레이스케일 값에 해당하는 픽셀의 개수를 함수의 형태로 나타낸 것</strong>이다. 다음과 같은 수식으로 표현한다.</p>
+
+<script type="math/tex; mode=display">h(g) = n _{g}</script>
+
+<p>g는 그레이스케일 값을, $n_g$는 그레이스케일 값이 g인 픽셀의 개수를 나타낸다.</p>
+
+<p>h(g) 함수가 가질 수 있는 값은 영상의 크기에 따라 작거나 커질 수 있다. 그러므로 $n_g$를 영상의 전체 픽셀의 개수로 나누는 정규화 과정을 통하여 히스토그램을 표현하기도 한다. 정규화된 히스토그램은 다음과 같은 수식으로 표현되며, 특정 그레이스케일 값이 나타나는 확률의 개념으로 이해할 수 있다.</p>
+
+<script type="math/tex; mode=display">p(g) = \frac{n_{g}}{N}</script>
+
+<script type="math/tex; mode=display">\sum_{g = 0}^{255}p(g) = 1</script>
+
+<p>이 식에서 N은 영상의 전체 픽셀 개수를 의미하고, 함수 이름은 확률(probability)을 의미하는 p로 변경하였다. 그레이스케일 값 전체 범위에 대해 정규화된 히스토그램 p(g) 값을 모두 더하면 1이 된다.</p>
+
+<p>히스토그램을 함수의 그래프라고 생각하면, x축은 그레이스케일 값이 되고 y축은 해당 그레이스케일 값이 나타나는 빈도수(또는 확률)라고 생각할 수 있다.</p>
+
+<p>히스토그램은 영상의 속성을 잘 표현하기 때문에 영상의 압축, 분할, 내용 기반 검색 등 다양한 영상 처리 분야에서 사용되고 있다. 또한 계산 방법이 매우 간단하기 때문에 소프트웨어나 하드웨어로 구현하기 용이하다.</p>
+
+<p><img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/09479f2b-8b85-4539-80ef-28c474fad904" alt="img1" /></p>
+
+<ul>
+  <li>밝은 영상의 경우, 히스토그램이 255에 가까운 오른쪽으로 치우쳐 있다.</li>
+  <li>어두운 영상의 경우, 히스토그램이 0에 가까운 왼쪽으로 치우쳐 있다.</li>
+  <li>명암비가 낮은 영상의 경우, 히스토그램이 일정 구역에 몰려서 나타난다.</li>
+  <li>명암비가 높은 영상의 경우, 히스토그램은 그 값이 0~255 구간 전체에 골고루 나타난다.</li>
+</ul>
+
+<p>히스토그램을 구하기 위해서는 256개의 원소를 갖는 배열을 하나 선언한 후, 영상의 모든 픽셀을 검사하면서 픽셀의 그레이스케일에 해당하는 배열의 원소 값을 1씩 증가시키면 된다. 만약 정규화된 히스토그램 함수를 얻고 싶다면 연산이 끝난 후에 각 배열 값을 전체 픽셀의 개수로 나눈다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">IppHistogram</span><span class="p">(</span><span class="n">IppByteImage</span><span class="o">&amp;</span> <span class="n">img</span><span class="p">,</span> <span class="kt">float</span> <span class="n">histo</span><span class="p">[</span><span class="mi">256</span><span class="p">])</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetSize</span><span class="p">();</span>
+    <span class="n">BYTE</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetPixels</span><span class="p">();</span>
+
+    <span class="c1">// 히스토그램 계산</span>
+    <span class="kt">int</span> <span class="n">cnt</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="mi">256</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">cnt</span><span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+
+    <span class="c1">// 히스토그램 정규화</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">256</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">histo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">cnt</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="n">size</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="히스토그램-스트레칭"><strong>히스토그램 스트레칭</strong></h2>
+
+<p><strong>영상의 히스토그램이 그레이스케일 전 구간에서 골고루 나타나도록 변경하는 선형 변환 기법</strong>이다. 보통 명암비가 낮은 영상은 히스토그램이 특정 구간에 집중되어 나타나게 되는데, 마치 고무줄을 늘이듯이 히스토그램을 잡아 펼쳐서 그레이스케일 전 구간에서 히스토그램 그래프가 나타나도록 변환한다. 결과적으로 히스토그램 스트레칭을 수행한 영상은 명암비가 높아져 일반적으로 보기 좋은 사진 형태로 바뀌게 된다. 수식으로 표현하면 다음과 같다.</p>
+
+<script type="math/tex; mode=display">g(x, y) = \frac{f(x, y) - G_{min}}{G_{max} - G_{min}} ×255</script>
+
+<p>f(x, y)와 g(x, y)는 각각 입력 영상과 출력 영상을 나타낸다. 그리고 $G_{min}$과 $G_{max}$는 입력 영상의 픽셀 값 중에서 가장 낮은 그레이스케일 값과 가장 큰 그레이스케일 값을 의미한다.</p>
+
+<p><img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/9a5c8469-b0a3-4fb2-988a-e0d5322066ea" alt="img2" width="50%" style="display: block; margin: auto;" /></p>
+
+<p>히스토그램을 그레이스케일 양방향으로 늘려서 $G_{min}$은 0이 되게 하고, $G_{max}$는 255가 되도록 하면 전체적으로 명암비가 높아지는 형태로 바뀔 것이다.</p>
+
+<p><img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/d0585720-ad61-4c35-a3df-5ddd26091c40" alt="graph5" width="45%" style="display: block; margin: auto;" /></p>
+
+<p>그러한 변화를 위해서는 ($G_{min}$, 0)과 ($G_{max}$, 255)를 잇는 직선을 생성하고, 이를 변환 함수로 사용하면 히스토그램 스트레칭이 수행된다. 이 직선의 방정식을 구하려면 직선의 기울기와 y 절편을 구하면 된다. 직선의 기울기는 255 / ($G_{max}$ - $G_{min}$)가 되며, y 절편은 비례식을 이용하여 구하면 -255 * $G_{min}$ / ($G_{max}$ - $G_{min}$)이 된다.</p>
+
+<script type="math/tex; mode=display">g(x, y) = \frac{255}{G_{max} - G_{min}} × f(x, y) - \frac{255×G_{min}}{G_{max} - G_{min}}</script>
+
+<script type="math/tex; mode=display">= \frac{f(x, y) - G_{min}}{G_{max} - G_{min}} × 255</script>
+
+<h6 id="-히스토그램-스트레칭-함수">&gt; 히스토그램 스트레칭 함수</h6>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">IppHistogramStretching</span><span class="p">(</span><span class="n">IppByteImage</span><span class="o">&amp;</span> <span class="n">img</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetSize</span><span class="p">();</span>
+    <span class="n">BYTE</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetPixels</span><span class="p">();</span>
+
+    <span class="c1">// 최대, 최소 그레이스케일 값 계산</span>
+    <span class="n">BYTE</span> <span class="n">gray_max</span><span class="p">,</span> <span class="n">gray_min</span><span class="p">;</span>
+    <span class="n">gray_max</span> <span class="o">=</span> <span class="n">gray_min</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">gray_max</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">gray_max</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">gray_min</span> <span class="o">&gt;</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">gray_min</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="c1">// gray_max 값과 gray_min 값이 동일한 경우 원본 영상의 값 조절 없이 함수 종료</span>
+    <span class="c1">// 영상 전체가 단일 그레이스케일 값을 갖는 경우로 히스토그램 스트레칭의 의미가 없음</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">gray_max</span> <span class="o">==</span> <span class="n">gray_min</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span>
+
+    <span class="c1">// 히스토그램 스트레칭</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">gray_min</span><span class="p">)</span> <span class="o">*</span> <span class="mi">255</span> <span class="o">/</span> <span class="p">(</span><span class="n">gray_max</span> <span class="o">-</span> <span class="n">gray_min</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="히스토그램-균등화"><strong>히스토그램 균등화</strong></h2>
+
+<p><strong>히스토그램의 누적 분포 특성에 근거하여 히스토그램의 분포를 변경시키는 방법</strong>으로, <strong>히스토그램 평활화</strong> 또는 <strong>히스토그램 평탄화</strong>라고도 한다.</p>
+
+<p>영상의 픽셀 값을 변환하는 함수를 다음과 같이 표현한다고 하자.</p>
+
+<script type="math/tex; mode=display">s = T(r)</script>
+
+<p>r은 입력 그레이스케일이고, s는 변환 함수 T에 의한 출력 그레이스케일 값이다. 일반적으로 변환 함수 T는 단조 증가 함수로 가정하며, 히스토그램 균등화도 단조 증가 변환 함수의 형태로 나타낼 수 있다.</p>
+
+<p>앞에서 정규화된 히스토그램이 확률의 의미를 갖는다고 했었는데, 이와 관련하여 입력 영상의 히스토그램과 출력 영상의 히스토그램을 확률 밀도 함수의 형태로 각각 $p_r(r)$과 $p_s(s)$로 나타낼 수 있다. 편의를 위해 r과 s는 연속 변수라고 가정한다. 히스토그램 균등화의 변환 함수는 $p_r(r)$를 누적시킨 값에 대응하는 형태로 정의되며, 다음과 같은 식으로 표현할 수 있다.</p>
+
+<script type="math/tex; mode=display">s = T(r) = \int_{0}^{r}p_{r}(τ)dτ</script>
+
+<p>변수 τ는 적분을 위한 임시 변수이다. 여기서 확률 밀도 함수를 적분을 사용하여 더해준 형태의 함수를 누적 분포 함수라고 부른다.</p>
+
+<p>히스토그램 균등화를 이용하여 얻어진 결과 영상은 조금 독특한 형태의 확률 밀도 함수를 갖는다. 확률 이론을 이용하면 $p_r(r)$과 $p_s(s)$의 관계를 다음과 같이 나타낼 수 있다.</p>
+
+<script type="math/tex; mode=display">p_{s}(s) = p_{r}(r)|\frac{dr}{ds}|</script>
+
+<p>s = T(r) 식에 미적분 공식을 사용하면 dr / ds의 관계를 다음과 같이 나타낼 수 있다.</p>
+
+<script type="math/tex; mode=display">\frac{ds}{dr} = \frac{dT(r)}{dr}</script>
+
+<script type="math/tex; mode=display">=\frac{d}{dr}[\int_{0}^{r}p_{r}(w)dw]</script>
+
+<script type="math/tex; mode=display">= p_{r}(r)</script>
+
+<p>이 식을 바로 앞에 있던 식에 대입하면 $p_s(s)$의 식을 구할 수 있다.</p>
+
+<script type="math/tex; mode=display">p_{s}(s) = p_{r}(r)|\frac{dr}{ds}|</script>
+
+<script type="math/tex; mode=display">=p_{r}(r)|\frac{1}{p_{r}(r)}|</script>
+
+<script type="math/tex; mode=display">=1</script>
+
+<p>위 식에서 알 수 있듯이, 히스토그램 균등화 변환 함수에 대한 출력 영상의 히스토그램은 모든 그레이스케일 값에서 1이라는 값을 가지게 된다. 히스토그램이 항상 1의 값을 갖는다는 것은 영상의 픽셀 값이 전체 그레이스케일 영역에서 균등하게 나타남을 의미한다. 즉, 모든 영상이 히스토그램 균등화 과정을 거치면 그 분포가 항상 동일한 모양으로 변하게 되는 것이다.</p>
+
+<p><img src="https://github.com/ufolozie/ufolozie.github.io/assets/98166928/2052d400-f40a-45ae-ae58-bb3a20a40efa" alt="image4" width="50%" style="display: block; margin: auto;" /></p>
+
+<p>히스토그램 분포는 검정색으로, 히스토그램 누적 함수는 회색의 실선으로 표현하였다. 입력 영상에서는 히스토그램이 중앙 부분에만 밀집해있기 때문에 누적 함수가 그레이스케일 중간 부분에서 최댓값까지 도달해있음을 볼 수 있다. 히스토그램 균등화가 적용된 결과 영상에서는 히스토그램 누적 함수의 모양이 직선 형태로 반듯하게 증가하는 것을 볼 수 있다. 실제 디지털 영상의 경우, 히스토그램 균등화를 적용한 영상이라고 하더라도 히스토그램 자체가 균등하게 되지는 않지만, 누적 함수의 형태를 보면 그러한 속성을 가지고 있음을 확인할 수 있다.</p>
+
+<h6 id="-히스토그램-균등화-함수">&gt; 히스토그램 균등화 함수</h6>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">IppHistogramEqualization</span><span class="p">(</span><span class="n">IppByteImage</span><span class="o">&amp;</span> <span class="n">img</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetSize</span><span class="p">();</span>
+    <span class="n">BYTE</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">GetPixels</span><span class="p">();</span>
+
+    <span class="c1">// 히스토그램 계산</span>
+    <span class="kt">float</span> <span class="n">hist</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+    <span class="n">IppHistogram</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">his</span><span class="p">);</span>
+
+    <span class="c1">// 히스토그램 누적 함수 계산</span>
+    <span class="kt">float</span> <span class="n">cdf</span><span class="p">[</span><span class="mi">256</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mf">0.0</span><span class="p">,</span> <span class="p">};</span>
+    <span class="n">cdf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">hist</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">256</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">cdf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">cdf</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">hist</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+    <span class="c1">// 히스토그램 균등화</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">BYTE</span><span class="o">&gt;</span><span class="p">(</span><span class="n">limit</span><span class="p">(</span><span class="n">cdf</span><span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">255</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+          </div>
+          <!-- <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=%ED%99%94%EC%A7%88+%ED%96%A5%EC%83%81+%EA%B8%B0%EB%B2%95%20-%20https://ufolozie.github.io/posts/ip-4" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://ufolozie.github.io/posts/ip-4" title="Share on Facebook" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>
+            </a>
+          </div> -->
+
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    <!-- Chalk is a high quality, completely customizable, performant and 100% free
+    blog template for Jekyll built by
+    <a href="/about" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>. -->
+    © 2021 - 2025
+    <a href="/about" title="About me"> ufolozie</a>. 
+    Some rights reserved.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-3ee2c63bbac916f96cd7f90e83ab767f058ead1301444c9966f5156911c8be7f.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>

@@ -1,20 +1,90 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom" xmlns:dc="https://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ page.path | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>ufolozie</title>
+    <description></description>
+    <link>https://ufolozie.github.io</link>
+    <atom:link href="https://ufolozie.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>통신망과 특징</title>
+        <description>유선통신망 / 무선통신망</description>
+        <pubDate>Sat, 30 Sep 2023 00:00:00 +0900</pubDate>
+        <link>https://ufolozie.github.io/posts/network-1</link>
+        <guid isPermaLink="true">https://ufolozie.github.io/posts/network-1</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>영상의 특징값 추출 방법</title>
+        <description>마스크 기반 엣지 검출 / 캐니 엣지 검출기 / 허프 변환을 이용한 직선 검출 / 해리스 코너 포인트 검출</description>
+        <pubDate>Tue, 06 Jun 2023 00:00:00 +0900</pubDate>
+        <link>https://ufolozie.github.io/posts/ip-7</link>
+        <guid isPermaLink="true">https://ufolozie.github.io/posts/ip-7</guid>
+      </item>
+    
+      <item>
+        <title>영상의 기하학적 변환</title>
+        <description>이동 / 크기 / 회전 / 대칭 변환</description>
+        <pubDate>Mon, 22 May 2023 00:00:00 +0900</pubDate>
+        <link>https://ufolozie.github.io/posts/ip-6</link>
+        <guid isPermaLink="true">https://ufolozie.github.io/posts/ip-6</guid>
+      </item>
+    
+      <item>
+        <title>다양한 공간적 필터링 기법</title>
+        <description>평균 값 필터 / 가중 평균 값 필터 / 가우시안 필터 / 언샤프 마스크 필터링 / 하이부스트 필터 / 가우시안 잡음 / 소금 &amp; 후추 잡음 / 미디언 필터 / 비등방성 확산 필터</description>
+        <pubDate>Tue, 16 May 2023 00:00:00 +0900</pubDate>
+        <link>https://ufolozie.github.io/posts/ip-5</link>
+        <guid isPermaLink="true">https://ufolozie.github.io/posts/ip-5</guid>
+      </item>
+    
+      <item>
+        <title>화질 향상 기법</title>
+        <description>반전 / 밝기 조절 / 명암비 조절 / 감마 보정 / 히스토그램 분석 / 히스토그램 스트레칭 / 히스토그램 균등화</description>
+        <pubDate>Tue, 25 Apr 2023 00:00:00 +0900</pubDate>
+        <link>https://ufolozie.github.io/posts/ip-4</link>
+        <guid isPermaLink="true">https://ufolozie.github.io/posts/ip-4</guid>
+      </item>
+    
+      <item>
+        <title>영상 클래스 만들기</title>
+        <description></description>
+        <pubDate>Sat, 22 Apr 2023 00:00:00 +0900</pubDate>
+        <link>https://ufolozie.github.io/posts/ip-3</link>
+        <guid isPermaLink="true">https://ufolozie.github.io/posts/ip-3</guid>
+      </item>
+    
+      <item>
+        <title>BMP 파일의 이해</title>
+        <description></description>
+        <pubDate>Sat, 08 Apr 2023 00:00:00 +0900</pubDate>
+        <link>https://ufolozie.github.io/posts/ip-2</link>
+        <guid isPermaLink="true">https://ufolozie.github.io/posts/ip-2</guid>
+      </item>
+    
+      <item>
+        <title>영상 처리 개요</title>
+        <description></description>
+        <pubDate>Sat, 08 Apr 2023 00:00:00 +0900</pubDate>
+        <link>https://ufolozie.github.io/posts/ip-1</link>
+        <guid isPermaLink="true">https://ufolozie.github.io/posts/ip-1</guid>
+      </item>
+    
+      <item>
+        <title>[JavaScript] 이미지 슬라이더 예제</title>
+        <description>3초마다 자동으로 넘어가는 이미지 슬라이더 웹 페이지에서 구현하기</description>
+        <pubDate>Thu, 30 Jun 2022 00:00:00 +0900</pubDate>
+        <link>https://ufolozie.github.io/posts/js-imageslider</link>
+        <guid isPermaLink="true">https://ufolozie.github.io/posts/js-imageslider</guid>
+      </item>
+    
+      <item>
+        <title>[Java] 문자 발생 횟수 계산 예제</title>
+        <description>사용자로부터 입력받은 문자열에서 각각의 문자들이 나타나는 횟수를 계산하는 예제 프로그램</description>
+        <pubDate>Tue, 05 Apr 2022 00:00:00 +0900</pubDate>
+        <link>https://ufolozie.github.io/posts/java-countletter</link>
+        <guid isPermaLink="true">https://ufolozie.github.io/posts/java-countletter</guid>
+      </item>
+    
   </channel>
 </rss>
