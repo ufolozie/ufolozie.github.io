@@ -85,7 +85,7 @@ for (int i = 0; i < buffer.length(); i++) {
 *catch { 대문자 → 소문자 변환 }*  
 *finally { 각 문자가 등장하는 횟수 계산 }***
 
-문자열 buffer에서 각 문자가 등장하는 횟수를 계산하는 for문 내부에 try-catch문을 중첩하여 **대문자 예외처리를 위한 코드를 추가**하였다.
+문자열 buffer에서 각 문자가 등장하는 횟수를 계산하는 for 문 내부에 try-catch 문을 중첩하여 **대문자 예외처리를 위한 코드를 추가**하였다.
 
 `try { // char ch = buffer.charAt(i); count[ch - 'a']++; }`  
 `catch { // (대문자 입력 시) buffer = buffer.toLowerCase(); … }`
@@ -110,7 +110,7 @@ for (int i = 0; i < buffer.length(); i++) {
 #### **✅ 정리**
 
 - 사용자로부터 문자열을 받아 String buffer에 저장한 뒤, buffer 내 공백을 제거
-- 대문자가 입력으로 들어왔을 경우의 예외처리를 위해 for문 내부에 try-catch문을 삽입
+- 대문자가 입력으로 들어왔을 경우의 예외처리를 위해 for 문 내부에 try-catch 문을 삽입
 - count 값이 0이 아닌 요소들을 출력
 
 <br>
@@ -141,7 +141,7 @@ public class CountLetter {
         // 각 문자가 등장하는 횟수를 계산하는 반복 루프
         for (int i = 0; i < buffer.length(); i++) {
             char ch = buffer.charAt(i); // 문자열에서 하나의 문자만 가져옴
-            // 대문자/소문자에 따른 예외처리를 위한 코드 삽입 
+            // 대/소문자에 따른 예외처리를 위한 코드 삽입 
             try {
                 countUpper[ch - 'A']++; // ch가 대문자이면 countUpper 배열의 해당 알파벳(인덱스)의 횟수(값)를 1만큼 증가시킴
             } catch (ArrayIndexOutOfBoundsException e) { // ch가 소문자여서 ArrayIndexOutOfBoundsException이 발생할 시
